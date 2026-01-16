@@ -20,19 +20,19 @@ export function CourseBundles() {
 
         <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           {courses.map((course) => (
-            <Card
-              key={course.id}
-              className={cn(
-                'relative overflow-hidden',
-                course.popular && 'border-2 border-primary shadow-lg'
-              )}
-            >
+            <div key={course.id} className="relative">
+              {/* Badge outside Card to avoid overflow-hidden clipping */}
               {course.popular && (
-                <div className="absolute top-4 right-4">
-                  <Badge className="bg-primary text-white">Most Popular</Badge>
+                <div className="absolute -top-3 right-4 z-10">
+                  <Badge className="bg-primary text-white shadow-md">Most Popular</Badge>
                 </div>
               )}
-
+              <Card
+                className={cn(
+                  'h-full',
+                  course.popular && 'border-2 border-primary shadow-lg'
+                )}
+              >
               <CardHeader>
                 <CardTitle className="text-xl">{course.title}</CardTitle>
                 <CardDescription>{course.description}</CardDescription>
@@ -73,6 +73,7 @@ export function CourseBundles() {
                 </Button>
               </CardFooter>
             </Card>
+            </div>
           ))}
         </div>
 
