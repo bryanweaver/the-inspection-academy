@@ -1,3 +1,4 @@
+import { Suspense } from 'react';
 import type { Metadata } from 'next';
 import {
   AHITHero,
@@ -73,7 +74,9 @@ export default function AHITAlternativePage() {
       <UrgencyBanner />
 
       {/* Optimized section order for conversion */}
-      <AHITHero />
+      <Suspense fallback={null}>
+        <AHITHero />
+      </Suspense>
       <ComparisonTable />
       <TestimonialsSection />
       <PassRateStats />
