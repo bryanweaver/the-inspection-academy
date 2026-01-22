@@ -1,12 +1,17 @@
 export { Hero } from './hero';
 export { ProblemSolution } from './problem-solution';
+export { GuideCredentials } from './guide-credentials';
 export { HowItWorks } from './how-it-works';
+export { MoneyBackGuarantee } from './money-back-guarantee';
 export { BulletproofTestPrep } from './bulletproof-test-prep';
 export { WhatsIncluded } from './whats-included';
 export { SpectoraTraining } from './spectora-training';
 export { Credentials } from './credentials';
 export { CourseBundles } from './course-bundles';
 export { Features } from './features';
+export { TRECData } from './trec-data';
 export { CostOfFailure } from './cost-of-failure';
+export { SuccessStakes } from './success-stakes';
+export { SubscriptionCallout } from './subscription-callout';
 export { Testimonials } from './testimonials';
 export { CTA } from './cta';

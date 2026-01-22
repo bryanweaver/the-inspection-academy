@@ -92,7 +92,7 @@ export function Footer() {
                     className="flex items-center text-sm hover:text-white transition-colors"
                   >
                     <Calendar className="mr-2 h-4 w-4" />
-                    Schedule a Meeting
+                    Book an Online Meeting
                   </a>
                 </li>
               </ul>
@@ -106,15 +106,7 @@ export function Footer() {
             <p className="text-sm text-gray-400">
               &copy; {new Date().getFullYear()} The Inspection Academy LLC. All rights reserved.
             </p>
-            <div className="flex space-x-6">
-              <Link href="/privacy" className="text-sm text-gray-400 hover:text-white transition-colors">
-                Privacy Policy
-              </Link>
-              <Link href="/terms" className="text-sm text-gray-400 hover:text-white transition-colors">
-                Terms of Service
-              </Link>
-            </div>
-          </div>
+                      </div>
         </div>
       </Container>
     </footer>

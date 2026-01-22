@@ -116,7 +116,7 @@ export function ExitIntentPopup() {
                 rel="noopener noreferrer"
               >
                 <Calendar className="mr-2 h-5 w-5" />
-                Schedule a Free Meeting
+                Book an Online Meeting
               </a>
             </Button>
 

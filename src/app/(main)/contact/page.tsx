@@ -28,7 +28,7 @@ const contactMethods = [
   },
   {
     icon: Calendar,
-    title: 'Schedule a Meeting',
+    title: 'Book an Online Meeting',
     description: 'Book a time that works for you',
     action: 'Free 30-minute consultation',
     href: SITE_CONFIG.links.scheduleCall,

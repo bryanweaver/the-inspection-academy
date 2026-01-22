@@ -1,7 +1,7 @@
 'use client';
 
 import { useSearchParams } from 'next/navigation';
-import { ExternalLink, Users, Phone } from 'lucide-react';
+import { ExternalLink, Phone, Shield, Award, Zap, ChevronDown } from 'lucide-react';
 import { Section, Container } from '@/components/layout';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
@@ -9,10 +9,10 @@ import { heroContent, headlineVariants } from '@/data/landing-pages/ahit-alterna
 import { SITE_CONFIG } from '@/lib/constants';
 import { trackEnrollClick, trackScheduleCall, trackOutboundClick, trackEvent } from '@/lib/analytics';
 
-const statColorClasses = {
-  success: 'bg-green-100 text-green-700 border-green-200',
-  primary: 'bg-primary/10 text-primary border-primary/20',
-  danger: 'bg-red-100 text-red-700 border-red-200',
+const iconMap = {
+  Shield,
+  Award,
+  Zap,
 };
 
 type VariantKey = 'control' | 'variantA' | 'variantB';
@@ -21,7 +21,6 @@ export function AHITHero() {
   const searchParams = useSearchParams();
 
   // A/B test: Get variant from URL param (?variant=A or ?variant=B)
-  // Default to control if not specified
   const variantParam = searchParams.get('variant');
   let variant: VariantKey = 'control';
 
@@ -67,53 +66,98 @@ export function AHITHero() {
             </Badge>
           </a>
 
-          {/* H1 - A/B Tested */}
+          {/* H1 */}
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-gray-900 mb-4">
             {headlines.h1}{' '}
             <span className="text-primary">{headlines.h1Accent}</span>
           </h1>
 
-          {/* H2 - A/B Tested */}
-          <h2 className="text-xl md:text-2xl font-semibold text-gray-700 mb-6">
+          {/* H2 / Subheadline */}
+          <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto">
             {headlines.h2}
-          </h2>
-
-          {/* Stat Badges */}
-          <div className="flex flex-wrap justify-center gap-4 mb-8">
-            {heroContent.statBadges.map((stat, index) => (
-              <div
-                key={index}
-                className={`px-5 py-3 rounded-xl border ${statColorClasses[stat.color as keyof typeof statColorClasses]}`}
-              >
-                <div className="text-2xl md:text-3xl font-bold">{stat.value}</div>
-                <div className="text-xs uppercase tracking-wide opacity-80">
-                  {stat.label}
-                </div>
-              </div>
-            ))}
-          </div>
-
-          {/* Description - Shorter */}
-          <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
-            {heroContent.description.split('\n\n')[0]}
           </p>
 
-          {/* CTAs */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-4">
-            <div className="flex flex-col items-center">
-              <Button size="lg" className="w-full sm:w-auto px-8" asChild onClick={handleEnrollClick}>
-                <a
-                  href={SITE_CONFIG.links.courseCatalog}
-                  target="_blank"
-                  rel="noopener noreferrer"
+          {/* Social Proof Badges */}
+          <div className="flex flex-col gap-3 mb-8 max-w-2xl mx-auto">
+            {heroContent.socialProofBadges.map((badge, index) => {
+              const Icon = iconMap[badge.icon as keyof typeof iconMap];
+              return (
+                <div
+                  key={index}
+                  className={`flex items-center justify-center text-sm px-4 py-2.5 rounded-lg ${
+                    badge.highlight
+                      ? 'bg-amber-100 text-amber-800 font-semibold'
+                      : 'bg-gray-100 text-gray-700'
+                  }`}
                 >
-                  {heroContent.ctaPrimary}
-                </a>
-              </Button>
-              <span className="text-xs text-gray-500 mt-2">
-                {heroContent.ctaPrimarySubtext}
-              </span>
+                  <Icon className={`mr-2 h-4 w-4 flex-shrink-0 ${badge.highlight ? 'text-amber-600' : 'text-primary'}`} />
+                  <span>{badge.text}</span>
+                </div>
+              );
+            })}
+          </div>
+
+          {/* Quick Comparison Cards */}
+          <div className="grid md:grid-cols-2 gap-4 mb-6 max-w-2xl mx-auto">
+            {/* AHIT Card */}
+            <div className="bg-gray-100 border border-gray-200 rounded-xl p-6 text-center">
+              <h3 className="text-lg font-semibold text-gray-700 mb-2">
+                {heroContent.quickComparison.ahit.name}
+              </h3>
+              <div className="text-2xl font-bold text-gray-900">
+                {heroContent.quickComparison.ahit.price}
+              </div>
+              <p className="text-sm text-gray-500 mb-2">
+                {heroContent.quickComparison.ahit.note}
+              </p>
+              <p className="text-red-600 font-medium">
+                {heroContent.quickComparison.ahit.passRate}
+              </p>
             </div>
+
+            {/* TIA Card */}
+            <div className="bg-green-50 border-2 border-green-500 rounded-xl p-6 text-center relative">
+              <div className="absolute -top-3 left-1/2 -translate-x-1/2">
+                <span className="bg-green-500 text-white text-xs font-semibold px-3 py-1 rounded-full">
+                  RECOMMENDED
+                </span>
+              </div>
+              <h3 className="text-lg font-semibold text-gray-700 mb-2">
+                {heroContent.quickComparison.tia.name}
+              </h3>
+              <div className="text-2xl font-bold text-gray-900">
+                {heroContent.quickComparison.tia.price}
+              </div>
+              <p className="text-sm text-gray-500 mb-2">
+                {heroContent.quickComparison.tia.note}
+              </p>
+              <p className="text-green-600 font-bold">
+                {heroContent.quickComparison.tia.passRate}
+              </p>
+            </div>
+          </div>
+
+          {/* Advantage Text */}
+          <p className="text-lg font-semibold text-gray-900 mb-8">
+            {heroContent.quickComparison.advantage}
+          </p>
+
+          {/* Primary CTAs */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-4">
+            <Button
+              size="lg"
+              className="bg-amber-500 hover:bg-amber-600 text-black font-semibold px-8"
+              asChild
+              onClick={handleEnrollClick}
+            >
+              <a
+                href={SITE_CONFIG.links.courseCatalog}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {heroContent.ctaPrimary}
+              </a>
+            </Button>
             <Button size="lg" variant="outline" asChild onClick={handleScheduleClick}>
               <a
                 href={SITE_CONFIG.links.scheduleCall}
@@ -125,11 +169,19 @@ export function AHITHero() {
             </Button>
           </div>
 
-          {/* Social Proof */}
-          <div className="flex items-center justify-center text-sm text-gray-500 mt-6">
-            <Users className="h-4 w-4 mr-2" />
-            {heroContent.socialProof}
-          </div>
+          {/* Scroll CTA */}
+          <button
+            onClick={() => {
+              document.getElementById('comparison-table')?.scrollIntoView({ behavior: 'smooth' });
+            }}
+            className="inline-flex items-center text-primary hover:text-primary/80 font-medium mt-6 transition-colors"
+          >
+            {heroContent.scrollCta}
+            <ChevronDown className="ml-2 h-4 w-4 animate-bounce" />
+          </button>
+
+          {/* Trust Badge */}
+          <p className="text-sm text-gray-500 mt-4">{heroContent.trustBadge}</p>
 
           {/* Phone Number */}
           <div className="mt-4">
@@ -138,7 +190,7 @@ export function AHITHero() {
               className="inline-flex items-center text-sm text-gray-600 hover:text-primary transition-colors"
             >
               <Phone className="h-4 w-4 mr-2" />
-              Questions? Call us: <span className="font-semibold ml-1">{SITE_CONFIG.phone}</span>
+              Call Now: <span className="font-semibold ml-1">{SITE_CONFIG.phone}</span>
             </a>
           </div>
         </div>

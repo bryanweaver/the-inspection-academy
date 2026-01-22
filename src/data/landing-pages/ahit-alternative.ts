@@ -33,52 +33,56 @@ export interface FAQ {
   answer: string;
 }
 
-export interface Testimonial {
-  id: string;
-  quote: string;
-  author: string;
-  location: string;
-  result: string;
-  rating: number;
-  image?: string;
-}
-
 // Page metadata
 export const pageMetadata = {
   title: 'AHIT Alternative Texas | TIA vs AHIT: 67% vs 51% Pass Rate',
   description:
-    "Comparing AHIT to TIA? See official TREC data: TIA 67% vs AHIT 51.45%. TIA includes books at comparable price. See the comparison.",
+    "Comparing AHIT to TIA? See official TREC data: TIA 67% vs AHIT 51.45%. Same price, but TIA includes textbooks. See the comparison.",
   url: 'https://theinspectionacademy.com/ahit-alternative',
 };
 
-// Hero section content
+// Hero section content - NEW STRUCTURE
 export const heroContent = {
   badge: 'Verified by Official TREC Data',
   badgeLink: 'https://www.trec.texas.gov/education/education-provider-exam-passage-rates-inspectors',
-  h1: 'The AHIT Alternative',
-  h1Accent: 'That Actually Works',
-  h2: '67% pass rate vs AHIT\'s 51% — and books are included',
-  description: `Looking at AHIT for your Texas home inspector license? Before you enroll, compare the official TREC pass rates.
-
-AHIT is the largest school in Texas, but not the highest performing. The Inspection Academy delivers significantly better results.`,
+  h1: 'Pass Your Texas Home Inspector',
+  h1Accent: 'Exam on the First Try',
+  h2: 'Researching AHIT for your Texas home inspection license? Compare official TREC pass rates before you enroll.',
   ctaPrimary: 'Start Your Training Today',
   ctaPrimarySubtext: 'TREC approved • 0% financing available',
-  ctaSecondary: 'Schedule a Free Meeting',
-  // Stat badges for hero
-  statBadges: [
-    { value: '67%', label: 'TIA Pass Rate', color: 'success' },
-    { value: '✓', label: 'Books Included', color: 'primary' },
-    { value: '51%', label: 'AHIT Pass Rate', color: 'danger' },
+  ctaSecondary: 'Book an Online Meeting',
+  // Social proof badges for hero
+  socialProofBadges: [
+    { icon: 'Shield', text: 'TREC-Approved Provider #701080' },
+    { icon: 'Award', text: '#2 Highest Pass Rate in Texas (67% - Official TREC Data)', highlight: true },
+    { icon: 'Zap', text: '15.55 percentage points higher than AHIT (51.45%)' },
   ],
-  socialProof: 'Texas inspectors trust TIA for higher pass rates',
+  // Quick comparison cards
+  quickComparison: {
+    ahit: {
+      name: 'AHIT',
+      price: '$2,500',
+      note: '(no textbooks)',
+      passRate: '51.45% pass rate',
+    },
+    tia: {
+      name: 'TIA',
+      price: '$2,495',
+      note: '(textbooks included)',
+      passRate: '67% pass rate',
+    },
+    advantage: 'YOUR ADVANTAGE: Same price, but you get more + 15.55% better pass rate',
+  },
+  scrollCta: 'See Complete School Comparison ↓',
+  trustBadge: '✓ All data verified by official TREC records',
 };
 
-// Comparison table data
+// Comparison table data - UPDATED
 export const comparisonFeatures: ComparisonFeature[] = [
   {
     feature: 'Price',
     tia: '$2,495',
-    ahit: '$3,199',
+    ahit: '$2,500',
     highlight: true,
   },
   {
@@ -87,10 +91,20 @@ export const comparisonFeatures: ComparisonFeature[] = [
     ahit: true,
   },
   {
-    feature: 'NHIE Textbooks Included',
-    tia: true,
-    ahit: false,
+    feature: 'NHIE Textbooks',
+    tia: 'Included ($200 value)',
+    ahit: 'Not included',
     highlight: true,
+  },
+  {
+    feature: 'Field Experience Included',
+    tia: 'Student arranged',
+    ahit: 'Scheduled practicum',
+  },
+  {
+    feature: 'Field Experience Model',
+    tia: '1:1 with inspector of YOUR choice',
+    ahit: '4:1 group ratio, wait lists',
   },
   {
     feature: 'Embedded Practice Questions',
@@ -138,6 +152,12 @@ export const comparisonFeatures: ComparisonFeature[] = [
     ahit: '51.45%',
     highlight: true,
   },
+  {
+    feature: 'Money-Back Guarantee',
+    tia: 'Pass-or-refund',
+    ahit: false,
+    highlight: true,
+  },
 ];
 
 export const comparisonNote =
@@ -145,10 +165,39 @@ export const comparisonNote =
 export const comparisonNoteLink =
   'https://www.trec.texas.gov/education/education-provider-exam-passage-rates-inspectors';
 export const comparisonInsight =
-  "Key Insight: While AHIT is the largest school in Texas (241 students, 42% market share), The Inspection Academy delivers 15.55 percentage points higher pass rates — and includes NHIE textbooks at comparable price.";
+  "Key Insight: AHIT's starter package costs $2,500 and includes scheduled practicum but excludes required textbooks. TIA is $2,495 and includes textbooks but gives you flexibility to arrange your own field experience. The real difference? TIA's 67% pass rate vs AHIT's 51.45%—what matters is which school actually prepares you to pass.";
 
-// Five reasons section
-export const fiveReasons: Reason[] = [
+// Field Experience section content
+export const fieldExperienceContent = {
+  title: 'Understanding Field Experience Requirements',
+  subtitle: 'What TREC Changed and Why It Matters',
+  intro: 'In 2023, TREC changed the "Practicum" requirement to "Field Experience" to give students MORE flexibility in how they meet this requirement.',
+  ahitApproach: {
+    title: "AHIT's Approach: One-Size-Fits-All",
+    description: 'AHIT includes their scheduled practicum in your tuition:',
+    points: [
+      "Wait lists - You're on their schedule, not yours",
+      "4:1 student-to-instructor ratio - You're one of four students per inspector",
+      "Out-of-state contractors - AHIT contracts Texas inspectors since they're based elsewhere",
+      "Limited scheduling - Typically spread over 2 weekends based on their availability",
+    ],
+  },
+  tiaApproach: {
+    title: "TIA's Approach: Your Choice, Your Schedule",
+    description: "TIA doesn't include field experience because TREC designed it to give YOU options:",
+    points: [
+      "Choose your mentor - Work 1-on-1 with any Texas inspector with 5+ years experience or 200+ inspections",
+      "Flexible scheduling - Complete your 5 ride-alongs on YOUR timeline",
+      "Potentially FREE - Many students connect with local inspectors who provide ride-alongs at no cost",
+      "Real relationships - Build connections with working inspectors in your market",
+    ],
+  },
+  costComparison: "Cost comparison: While AHIT builds practicum cost into their $2,500 package, most TIA students complete field experience for free or $50-300 total—less than the $200 in textbooks AHIT charges separately.",
+  networkNote: "Plus, TIA can connect you with our network of Texas inspectors if you need referrals.",
+};
+
+// Six reasons section - UPDATED from 5 to 6
+export const sixReasons: Reason[] = [
   {
     id: 'higher-pass-rate',
     number: 1,
@@ -164,17 +213,17 @@ export const fiveReasons: Reason[] = [
     icon: 'TrendingUp',
   },
   {
-    id: 'books-included',
+    id: 'same-price-smarter-value',
     number: 2,
-    title: 'Books Included',
-    subtitle: 'At Comparable Price',
+    title: 'Same Price, Smarter Value',
+    subtitle: 'What You Really Get for $2,495',
     description:
-      "TIA includes NHIE textbooks at comparable price. AHIT's package doesn't — you'll pay extra. Plus you get 20,000+ embedded questions, BTP exam prep, unlimited practice tests, and Spectora training.",
+      "The Bottom Line: Same price, but TIA's 67% pass rate (vs AHIT's 51.45%) proves what actually matters isn't which expenses are bundled—it's whether the training prepares you to pass. Most TIA students arrange field experience for free or minimal cost with local inspectors, building valuable connections in their market while getting personalized 1:1 attention.",
     stats: {
-      tia: 'TIA: Books included at comparable price',
-      ahit: 'AHIT: Books not included — additional cost',
+      tia: 'TIA $2,495: Includes $200 textbooks, field experience flexibility, 20,000+ questions + BTP',
+      ahit: 'AHIT $2,500: Includes practicum (4:1 ratio, wait lists), textbooks NOT included',
     },
-    icon: 'BookOpen',
+    icon: 'DollarSign',
   },
   {
     id: 'texas-based',
@@ -210,6 +259,19 @@ export const fiveReasons: Reason[] = [
     description: 'Payment plans: 12, 18, or 24 months with no credit check.',
     icon: 'CreditCard',
   },
+  {
+    id: 'money-back-guarantee',
+    number: 6,
+    title: 'Risk-Free Guarantee',
+    subtitle: 'We Put Our Money Where Our Mouth Is',
+    description:
+      "Pass your licensing exam on your first attempt — or we refund every dollar you paid. Complete our training, pass five sample exams on Bulletproof Test Prep, take the state exam, and if you don't pass on your first try, we give you your money back. No fine print. No games. Just a guarantee backed by real results.",
+    stats: {
+      tia: 'Pass-or-refund guarantee',
+      ahit: 'No guarantee offered',
+    },
+    icon: 'Shield',
+  },
 ];
 
 // Pass rate statistics
@@ -220,25 +282,54 @@ export const passRateStats: PassRateStat[] = [
 ];
 
 export const passRateContent = {
-  title: 'Official TREC Data: Pass Rate Comparison',
-  description: `Texas is the only state that publicly posts school-specific pass rates. Don't take our word for it—verify yourself.
-
-According to the most recent TREC data:
-• The Inspection Academy: 67% first-time pass rate
-• Texas Average: 56.80% first-time pass rate
-• AHIT: 51.45% first-time pass rate
-
-AHIT performs below the state average.
-TIA performs significantly above it.`,
-  ctaText: 'View complete official data: TREC Provider Exam Pass Rates',
+  title: 'Official TREC Performance Data: TIA vs AHIT vs Texas Average',
+  description: 'Real results verified by the Texas Real Estate Commission',
+  stats: [
+    '67% - TIA First-Time Pass Rate (#2 in Texas)',
+    '56.8% - Texas State Average',
+    '51.45% - AHIT Pass Rate',
+  ],
+  badges: [
+    'Above State Average',
+    '15.55 points above AHIT',
+  ],
+  verifyText: "Texas is the only state that publicly posts school-specific pass rates. Don't take our word for it—verify yourself.",
+  ctaText: 'View Official TREC Data',
   ctaLink:
     'https://www.trec.texas.gov/education/education-provider-exam-passage-rates-inspectors',
+};
+
+// Money-back guarantee section
+export const guaranteeContent = {
+  title: "We're So Confident You'll Pass, We Guarantee It",
+  mainText: 'Pass your licensing exam on your first attempt — or we refund every dollar you paid.',
+  details: "Complete our training, pass five sample exams on Bulletproof Test Prep, take the state exam, and if you don't pass on your first try, we give you your money back.",
+  emphasis: 'No fine print. No games. Just a guarantee backed by real results.',
+  comparison: "Why can we offer this when AHIT doesn't? Because our system works. 67% of our students pass on the first try—#2 in Texas compared to AHIT's 51.45%.",
+  ctaPrimary: 'Start Your Training',
+  ctaSecondary: 'See Full Terms',
+  termsLink: '/money-back-guarantee',
+};
+
+// Texas keywords section
+export const texasKeywordsContent = {
+  title: 'AHIT Texas Training vs TIA: Which School is Right for Houston, Dallas, and San Antonio Students?',
+  intro: 'Both AHIT and The Inspection Academy are TREC-approved for Texas home inspector training. But Texas students researching AHIT Texas courses should compare the key differences:',
+  ahitApproach: {
+    title: 'AHIT Texas Approach:',
+    text: 'AHIT operates as a national franchise with Texas courses adapted from their national curriculum.',
+  },
+  tiaApproach: {
+    title: 'TIA Texas Focus:',
+    text: 'Built specifically for Texas students, by a Texas-licensed inspector based in Houston, teaching Texas-specific Standards of Practice.',
+  },
+  conclusion: "For students in Houston, Dallas, San Antonio, Austin, or anywhere in Texas: Compare official TREC pass rate data before choosing your school. AHIT's starter package is $2,500 without textbooks. TIA includes everything for $2,495 with a 67% pass rate vs AHIT's 51.45%.",
 };
 
 // Cost of failure section
 export const costOfFailureContent = {
   title: 'Why Pass Rates Matter More Than Price',
-  description: `At comparable prices, pass rate is what separates the schools. With AHIT's 51.45% pass rate, you have coin-flip odds. If you fail your first attempt:`,
+  description: "At comparable prices, pass rate is what separates the schools. With AHIT's 51.45% pass rate, you have coin-flip odds. If you fail your first attempt:",
   costs: [
     '$200 retake fee',
     '2-3 months additional study time',
@@ -250,7 +341,7 @@ export const costOfFailureContent = {
     "At comparable price points, TIA's 67% pass rate and included books make it the smarter choice over AHIT's 51% pass rate.",
 };
 
-// FAQ section
+// FAQ section - UPDATED with field experience FAQ
 export const ahitFAQs: FAQ[] = [
   {
     question: 'Is AHIT TREC approved?',
@@ -273,59 +364,31 @@ export const ahitFAQs: FAQ[] = [
       "AHIT's 241 students make them the largest school in Texas (42% market share), but size doesn't equal quality. Their 51.45% pass rate is below the Texas average of 56.80%. TIA's smaller size allows individualized attention and achieves significantly higher results.",
   },
   {
+    question: 'Does TIA include field experience in the tuition?',
+    answer:
+      "No, and here's why that's actually better for you: TREC changed the practicum requirement to \"field experience\" specifically to give students flexibility. AHIT locks you into their scheduled practicum with 4:1 ratios and wait lists. TIA gives you the freedom to complete your 5 required ride-alongs with ANY Texas inspector who has 5+ years experience or 200+ inspections. Many students find local inspectors who provide ride-alongs for free, or for $50-100 per ride-along—far less than the cost AHIT builds into their $2,500 package. You get 1:1 personalized attention, flexible scheduling, and the opportunity to build real relationships with working inspectors in YOUR market. Need help finding an inspector? We can connect you with our network.",
+  },
+  {
     question: 'Can I talk to someone before deciding?',
     answer:
       'Absolutely. Text or call directly at 281-917-7360. No pressure, just honest answers about which school is right for you.',
   },
 ];
 
-// Final CTA section
+// Final CTA section - UPDATED
 export const finalCTAContent = {
   title: 'Ready to Choose the Higher-Performing School?',
   description: "Don't settle for coin-flip odds when you can significantly improve your chances.",
   benefits: [
     "67% pass rate vs AHIT's 51.45%",
-    'Books included at comparable price',
-    'More exam prep included',
+    'Same price, more included',
+    'Money-back guarantee',
     'Texas-based and Texas-focused',
   ],
   phone: '281-917-7360',
   ctaPrimary: 'Start Your Training Today',
   ctaSecondary: 'Compare Full Details',
-  ctaTertiary: 'Schedule an Online Meeting',
-};
-
-// Testimonials section
-export const testimonials: Testimonial[] = [
-  {
-    id: '1',
-    quote: "I researched AHIT and TIA for weeks. The pass rate difference sealed the deal. Passed my exam on the first try and started my business within 2 months of finishing.",
-    author: 'Marcus Johnson',
-    location: 'Dallas, TX',
-    result: 'Passed first try',
-    rating: 5,
-  },
-  {
-    id: '2',
-    quote: "The adaptive test prep is what sets TIA apart. It identified exactly where I was weak and helped me focus my study time. Worth every penny compared to AHIT's basic materials.",
-    author: 'Jennifer Martinez',
-    location: 'San Antonio, TX',
-    result: 'Passed first try',
-    rating: 5,
-  },
-  {
-    id: '3',
-    quote: "I almost went with AHIT because of name recognition. So glad I looked at the actual TREC data. TIA's pass rate speaks for itself, and the books were included.",
-    author: 'Robert Chen',
-    location: 'Houston, TX',
-    result: 'Passed first try',
-    rating: 5,
-  },
-];
-
-export const testimonialsContent = {
-  title: 'Students Who Chose TIA Over AHIT',
-  subtitle: 'Real results from real Texas inspectors',
+  ctaTertiary: 'Book an Online Meeting',
 };
 
 // Sticky CTA content
@@ -335,22 +398,12 @@ export const stickyCTAContent = {
   subtext: '67% pass rate • Books included',
 };
 
-// Urgency banner content
-export const urgencyContent = {
-  // Set to a future date for the countdown - update this as needed
-  nextCohortDate: '2026-02-15T00:00:00',
-  headline: 'Spring 2026 Cohort',
-  subtext: 'Classes start February 15',
-  spotsLeft: 12, // Set to null to hide spots messaging
-  spotsText: 'spots remaining at current price',
-};
-
 // A/B Test variants for headlines
 export const headlineVariants = {
   control: {
-    h1: 'The AHIT Alternative',
-    h1Accent: 'That Actually Works',
-    h2: '67% pass rate vs AHIT\'s 51% — and books are included',
+    h1: 'Pass Your Texas Home Inspector',
+    h1Accent: 'Exam on the First Try',
+    h2: 'Researching AHIT for your Texas home inspection license? Compare official TREC pass rates before you enroll.',
   },
   variantA: {
     h1: 'Why Top Students Choose TIA',

@@ -1,8 +1,16 @@
 import Link from 'next/link';
-import { Phone, ChevronRight } from 'lucide-react';
+import { Phone, CheckCircle, ChevronRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Container, Section } from '@/components/layout';
 import { SITE_CONFIG } from '@/lib/constants';
+
+const benefits = [
+  '67% pass rate—#2 in Texas',
+  'Built by educators AND inspectors',
+  'Adaptive technology targets YOUR weak areas',
+  'Pass-or-refund guarantee—no fine print',
+  '0% interest payment plans available',
+];
 
 export function CTA() {
   return (
@@ -10,32 +18,47 @@ export function CTA() {
       <Container>
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            Ready to Start Your New Career?
+            Ready to Pass on Your First Try? Let&apos;s Talk.
           </h2>
           <p className="text-xl text-primary-foreground/90 mb-8">
-            Pass your exam. Get licensed. Build the life you want.
+            Pass your exam. Get licensed. Launch your career with confidence.
           </p>
 
+          {/* Benefits List */}
+          <div className="flex flex-wrap justify-center gap-3 mb-8">
+            {benefits.map((benefit, index) => (
+              <div
+                key={index}
+                className="flex items-center bg-white/10 text-white text-sm px-4 py-2 rounded-full"
+              >
+                <CheckCircle className="mr-2 h-4 w-4 text-green-400" />
+                {benefit}
+              </div>
+            ))}
+          </div>
+
+          {/* CTAs */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-            <Button size="lg" variant="secondary" asChild>
-              <Link href="/courses">
+            <Button size="lg" className="bg-amber-500 hover:bg-amber-600 text-black font-semibold" asChild>
+              <a href={SITE_CONFIG.links.courseCatalog} target="_blank" rel="noopener noreferrer">
                 Start Your Training
                 <ChevronRight className="ml-2 h-5 w-5" />
-              </Link>
+              </a>
             </Button>
             <Button size="lg" variant="outline" className="bg-transparent text-white border-white hover:bg-white/10" asChild>
               <a href={SITE_CONFIG.links.scheduleCall} target="_blank" rel="noopener noreferrer">
-                Schedule a Free Meeting
+                Book an Online Meeting
               </a>
             </Button>
           </div>
 
+          {/* Phone */}
           <a
             href={`tel:${SITE_CONFIG.phone}`}
-            className="inline-flex items-center text-white/90 hover:text-white transition-colors"
+            className="inline-flex items-center text-white/90 hover:text-white transition-colors text-lg"
           >
             <Phone className="mr-2 h-5 w-5" />
-            Questions? Call us: {SITE_CONFIG.phone}
+            Call Now: {SITE_CONFIG.phone}
           </a>
         </div>
       </Container>

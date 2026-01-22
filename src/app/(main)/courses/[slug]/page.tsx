@@ -199,7 +199,7 @@ export default async function CourseDetailPage({ params }: PageProps) {
                     </Button>
                     <Button className="w-full" variant="outline" asChild>
                       <a href={SITE_CONFIG.links.scheduleCall} target="_blank" rel="noopener noreferrer">
-                        Schedule a Meeting
+                        Book an Online Meeting
                       </a>
                     </Button>
                   </div>

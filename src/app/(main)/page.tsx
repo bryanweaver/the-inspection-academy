@@ -1,14 +1,15 @@
 import {
   Hero,
   ProblemSolution,
+  GuideCredentials,
   HowItWorks,
-  BulletproofTestPrep,
-  WhatsIncluded,
-  SpectoraTraining,
-  Credentials,
+  MoneyBackGuarantee,
   CourseBundles,
+  Features,
+  TRECData,
   CostOfFailure,
-  Testimonials,
+  SuccessStakes,
+  SubscriptionCallout,
   CTA,
 } from '@/components/sections';
 
@@ -18,17 +19,18 @@ export default function HomePage() {
       {/* ABOVE THE FOLD */}
       <Hero />
 
-      {/* BELOW THE FOLD - In order of importance */}
-      <ProblemSolution />      {/* The problem: 58.79% fail, why schools fail */}
-      <HowItWorks />           {/* 3-step process */}
-      <BulletproofTestPrep />  {/* Key differentiator: adaptive test prep */}
-      <WhatsIncluded />        {/* 6 courses + bonuses */}
-      <SpectoraTraining />     {/* Real software training */}
-      <Credentials />          {/* Trust: Master's in Ed, licensed inspectors */}
-      <CostOfFailure />        {/* Stakes: what failure really costs */}
-      <CourseBundles />        {/* The offer: pricing */}
-      <Testimonials />         {/* Social proof */}
-      <CTA />                  {/* Final push */}
+      {/* BELOW THE FOLD - StoryBrand Framework Order */}
+      <ProblemSolution />        {/* The problem: what most schools do wrong */}
+      <GuideCredentials />       {/* We're inspectors + educators */}
+      <HowItWorks />             {/* 3-step process with tagline */}
+      <MoneyBackGuarantee />     {/* Pass-or-refund guarantee */}
+      <CourseBundles />          {/* The offer: pricing with promo */}
+      <Features />               {/* Why students choose TIA */}
+      <TRECData />               {/* 67% pass rate - #2 in Texas (replaces testimonials) */}
+      <CostOfFailure />          {/* Stakes: what failure costs */}
+      <SuccessStakes />          {/* Stakes: what success brings */}
+      <SubscriptionCallout />    {/* 0% interest payment plans */}
+      <CTA />                    {/* Final push */}
     </>
   );
 }

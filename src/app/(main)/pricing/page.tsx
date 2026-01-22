@@ -170,7 +170,7 @@ export default function PricingPage() {
             </p>
             <Button size="lg" variant="secondary" asChild>
               <a href={SITE_CONFIG.links.scheduleCall} target="_blank" rel="noopener noreferrer">
-                Schedule a Free Meeting
+                Book an Online Meeting
               </a>
             </Button>
           </div>

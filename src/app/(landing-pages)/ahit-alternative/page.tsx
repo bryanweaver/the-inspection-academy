@@ -3,15 +3,16 @@ import type { Metadata } from 'next';
 import {
   AHITHero,
   ComparisonTable,
-  TestimonialsSection,
+  FieldExperienceSection,
   PassRateStats,
   CostOfFailureSection,
-  FiveReasons,
+  SixReasons,
+  GuaranteeSection,
+  TexasKeywordsSection,
   FAQSection,
   FinalCTA,
   StickyCTA,
   ExitIntentPopup,
-  UrgencyBanner,
   ProgressIndicator,
 } from '@/components/landing-pages/ahit-alternative';
 import { pageMetadata, ahitFAQs } from '@/data/landing-pages/ahit-alternative';
@@ -27,6 +28,10 @@ export const metadata: Metadata = {
     'home inspector school comparison',
     'AHIT competitor',
     'best home inspector school Texas',
+    'AHIT Texas',
+    'home inspection school Houston',
+    'home inspection school Dallas',
+    'home inspection school San Antonio',
   ],
   openGraph: {
     title: pageMetadata.title,
@@ -70,18 +75,17 @@ export default function AHITAlternativePage() {
       {/* Progress indicator */}
       <ProgressIndicator />
 
-      {/* Urgency banner */}
-      <UrgencyBanner />
-
       {/* Optimized section order for conversion */}
       <Suspense fallback={null}>
         <AHITHero />
       </Suspense>
       <ComparisonTable />
-      <TestimonialsSection />
+      <FieldExperienceSection />
       <PassRateStats />
       <CostOfFailureSection />
-      <FiveReasons />
+      <SixReasons />
+      <GuaranteeSection />
+      <TexasKeywordsSection />
       <FAQSection />
       <FinalCTA />
 

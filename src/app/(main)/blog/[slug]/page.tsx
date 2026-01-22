@@ -292,7 +292,7 @@ export default async function BlogPostPage({ params }: PageProps) {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Schedule a Meeting
+                  Book an Online Meeting
                 </a>
               </Button>
             </div>

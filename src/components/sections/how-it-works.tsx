@@ -29,8 +29,11 @@ export function HowItWorks() {
     <Section background="white">
       <Container>
         <div className="text-center mb-12">
+          <p className="text-xl text-primary font-semibold mb-4">
+            Learn Actively. Review Adaptively. Pass Confidently.
+          </p>
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            How TIA Gets You Licensed
+            Here&apos;s how TIA gets you licensed:
           </h2>
         </div>
 

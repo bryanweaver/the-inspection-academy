@@ -1,12 +1,13 @@
 export { AHITHero } from './ahit-hero';
 export { ComparisonTable } from './comparison-table';
-export { FiveReasons } from './five-reasons';
+export { SixReasons } from './six-reasons';
 export { PassRateStats } from './pass-rate-stats';
 export { CostOfFailureSection } from './cost-of-failure-section';
 export { FAQSection } from './faq-section';
 export { FinalCTA } from './final-cta';
-export { TestimonialsSection } from './testimonials-section';
+export { FieldExperienceSection } from './field-experience-section';
+export { GuaranteeSection } from './guarantee-section';
+export { TexasKeywordsSection } from './texas-keywords-section';
 export { StickyCTA } from './sticky-cta';
 export { ExitIntentPopup } from './exit-intent-popup';
-export { UrgencyBanner } from './urgency-banner';
 export { ProgressIndicator } from './progress-indicator';

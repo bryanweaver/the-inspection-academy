@@ -111,7 +111,7 @@ export default function CoursesPage() {
                     rel="noopener noreferrer"
                     className="text-sm text-gray-600 hover:text-primary"
                   >
-                    Have questions? Schedule a meeting
+                    Have questions? Book an online meeting
                   </a>
                 </CardFooter>
               </Card>
@@ -141,7 +141,7 @@ export default function CoursesPage() {
             </p>
             <Button size="lg" variant="secondary" asChild>
               <a href={SITE_CONFIG.links.scheduleCall} target="_blank" rel="noopener noreferrer">
-                Schedule a Free Meeting
+                Book an Online Meeting
               </a>
             </Button>
           </div>

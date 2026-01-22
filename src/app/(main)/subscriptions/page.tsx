@@ -259,7 +259,7 @@ export default function SubscriptionsPage() {
             </p>
             <Button size="lg" variant="secondary" asChild>
               <a href={SITE_CONFIG.links.scheduleCall} target="_blank" rel="noopener noreferrer">
-                Schedule a Meeting
+                Book an Online Meeting
                 <ChevronRight className="ml-2 h-5 w-5" />
               </a>
             </Button>

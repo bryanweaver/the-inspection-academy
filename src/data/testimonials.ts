@@ -9,13 +9,6 @@ export interface Testimonial {
 
 export const testimonials: Testimonial[] = [
   {
-    id: '1',
-    quote: 'The adaptive test prep was a game-changer. I knew exactly what I needed to focus on and passed on my first try.',
-    author: 'John D.',
-    title: 'Licensed TX Inspector',
-    rating: 5,
-  },
-  {
     id: '2',
     quote: 'As a non-native English speaker, the multi-language support made all the difference. I could learn the material in Spanish and still pass the exam.',
     author: 'Maria G.',

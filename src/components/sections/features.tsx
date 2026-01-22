@@ -13,7 +13,7 @@ const iconMap = {
 const features = [
   {
     title: 'Educators First',
-    description: "Led by a Master's in Education",
+    description: "Led by a Master's-level educator who understands Adult Learning Theory—the science of how people actually learn and retain information for high-stakes exams",
     icon: 'GraduationCap',
   },
   {

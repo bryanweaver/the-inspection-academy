@@ -79,11 +79,16 @@ export function CourseBundles() {
 
         {/* Promo Banner */}
         <div className="mt-8 text-center">
-          <div className="inline-flex items-center bg-amber-100 border border-amber-300 rounded-full px-6 py-3">
-            <span className="text-amber-800">
-              Use code <strong className="font-semibold">{SITE_CONFIG.promo.code}</strong> for{' '}
-              {SITE_CONFIG.promo.discount} off ({SITE_CONFIG.promo.description})
-            </span>
+          <div className="bg-amber-50 border border-amber-200 rounded-xl p-6 max-w-2xl mx-auto">
+            <h3 className="text-xl font-bold text-gray-900 mb-2">
+              We&apos;re Excited to Offer 15% Off All of Our Course Bundles
+            </h3>
+            <p className="text-gray-600 mb-4">
+              To the First 15 Paid-in-Full Students to Enroll in 2026
+            </p>
+            <div className="inline-block bg-amber-500 text-black font-bold px-6 py-2 rounded-lg">
+              USE THE CODE: {SITE_CONFIG.promo.code}
+            </div>
           </div>
         </div>
       </Container>
