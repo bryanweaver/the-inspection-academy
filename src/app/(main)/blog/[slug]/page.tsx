@@ -155,8 +155,39 @@ export default async function BlogPostPage({ params }: PageProps) {
 
   const shareUrl = `https://theinspectionacademy.com/blog/${post.slug}`;
 
+  // JSON-LD structured data for Article
+  const articleSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: post.title,
+    description: post.excerpt,
+    author: {
+      '@type': 'Organization',
+      name: post.author,
+      url: 'https://theinspectionacademy.com',
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'The Inspection Academy',
+      url: 'https://theinspectionacademy.com',
+    },
+    datePublished: post.date,
+    dateModified: post.date,
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': shareUrl,
+    },
+    keywords: post.tags?.join(', '),
+  };
+
   return (
     <>
+      {/* JSON-LD Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
+
       {/* Hero */}
       <Section className="pt-8 pb-12" background="gray">
         <Container>

@@ -21,6 +21,11 @@ export const metadata: Metadata = {
     title: 'The Inspection Academy Blog',
     description: 'Expert insights, guidance, and practical advice for aspiring and current home inspectors in Texas.',
   },
+  alternates: {
+    types: {
+      'application/rss+xml': 'https://theinspectionacademy.com/feed.xml',
+    },
+  },
 };
 
 export default function BlogPage() {
