@@ -43,7 +43,7 @@ export function Hero() {
             </Button>
             <Button size="lg" variant="outline" asChild>
               <a href={SITE_CONFIG.links.scheduleCall} target="_blank" rel="noopener noreferrer">
-                Schedule a Call
+                Schedule a Meeting
               </a>
             </Button>
           </div>

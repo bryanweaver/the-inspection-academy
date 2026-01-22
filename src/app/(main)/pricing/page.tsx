@@ -166,11 +166,11 @@ export default function PricingPage() {
               Have More Questions?
             </h2>
             <p className="text-lg text-white/80 mb-6">
-              Schedule a free call and we&apos;ll answer all your questions about pricing, financing, and which bundle is right for you.
+              Schedule a free meeting and we&apos;ll answer all your questions about pricing, financing, and which bundle is right for you.
             </p>
             <Button size="lg" variant="secondary" asChild>
               <a href={SITE_CONFIG.links.scheduleCall} target="_blank" rel="noopener noreferrer">
-                Schedule a Free Call
+                Schedule a Free Meeting
               </a>
             </Button>
           </div>

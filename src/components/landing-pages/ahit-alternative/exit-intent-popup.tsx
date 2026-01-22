@@ -101,8 +101,8 @@ export function ExitIntentPopup() {
                 <div className="text-xs text-gray-500">AHIT Pass Rate</div>
               </div>
               <div className="text-center">
-                <div className="text-2xl font-bold text-primary">$704</div>
-                <div className="text-xs text-gray-500">You Save</div>
+                <div className="text-2xl font-bold text-primary">✓</div>
+                <div className="text-xs text-gray-500">Books Included</div>
               </div>
             </div>
           </div>
@@ -116,7 +116,7 @@ export function ExitIntentPopup() {
                 rel="noopener noreferrer"
               >
                 <Calendar className="mr-2 h-5 w-5" />
-                Schedule a Free Call
+                Schedule a Free Meeting
               </a>
             </Button>
 

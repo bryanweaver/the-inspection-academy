@@ -111,7 +111,7 @@ export default function CoursesPage() {
                     rel="noopener noreferrer"
                     className="text-sm text-gray-600 hover:text-primary"
                   >
-                    Have questions? Schedule a call
+                    Have questions? Schedule a meeting
                   </a>
                 </CardFooter>
               </Card>
@@ -137,11 +137,11 @@ export default function CoursesPage() {
               Not Sure Which Bundle Is Right for You?
             </h2>
             <p className="text-lg text-white/80 mb-6">
-              Schedule a free call with our team and we&apos;ll help you choose the right path for your career goals.
+              Schedule a free meeting with our team and we&apos;ll help you choose the right path for your career goals.
             </p>
             <Button size="lg" variant="secondary" asChild>
               <a href={SITE_CONFIG.links.scheduleCall} target="_blank" rel="noopener noreferrer">
-                Schedule a Free Call
+                Schedule a Free Meeting
               </a>
             </Button>
           </div>

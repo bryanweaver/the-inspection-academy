@@ -1,6 +1,6 @@
 import {
   TrendingUp,
-  DollarSign,
+  BookOpen,
   MapPin,
   Target,
   CreditCard,
@@ -11,7 +11,7 @@ import { fiveReasons } from '@/data/landing-pages/ahit-alternative';
 
 const iconMap = {
   TrendingUp,
-  DollarSign,
+  BookOpen,
   MapPin,
   Target,
   CreditCard,

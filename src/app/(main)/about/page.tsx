@@ -145,7 +145,7 @@ export default function AboutPage() {
               </Button>
               <Button size="lg" variant="outline" className="bg-transparent text-white border-white hover:bg-white/10" asChild>
                 <a href={SITE_CONFIG.links.scheduleCall} target="_blank" rel="noopener noreferrer">
-                  Schedule a Call
+                  Schedule a Meeting
                 </a>
               </Button>
             </div>

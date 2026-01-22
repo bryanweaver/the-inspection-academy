@@ -92,7 +92,7 @@ export function Footer() {
                     className="flex items-center text-sm hover:text-white transition-colors"
                   >
                     <Calendar className="mr-2 h-4 w-4" />
-                    Schedule a Call
+                    Schedule a Meeting
                   </a>
                 </li>
               </ul>

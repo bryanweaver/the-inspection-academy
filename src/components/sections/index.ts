@@ -1,6 +1,10 @@
 export { Hero } from './hero';
 export { ProblemSolution } from './problem-solution';
 export { HowItWorks } from './how-it-works';
+export { BulletproofTestPrep } from './bulletproof-test-prep';
+export { WhatsIncluded } from './whats-included';
+export { SpectoraTraining } from './spectora-training';
+export { Credentials } from './credentials';
 export { CourseBundles } from './course-bundles';
 export { Features } from './features';
 export { CostOfFailure } from './cost-of-failure';

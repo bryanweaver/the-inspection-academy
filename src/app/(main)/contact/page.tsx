@@ -6,7 +6,7 @@ import { SITE_CONFIG } from '@/lib/constants';
 
 export const metadata = {
   title: 'Contact | The Inspection Academy',
-  description: 'Get in touch with The Inspection Academy. Schedule a call, send an email, or give us a call.',
+  description: 'Get in touch with The Inspection Academy. Schedule a meeting, send an email, or give us a call.',
 };
 
 const contactMethods = [
@@ -28,9 +28,9 @@ const contactMethods = [
   },
   {
     icon: Calendar,
-    title: 'Schedule a Call',
+    title: 'Schedule a Meeting',
     description: 'Book a time that works for you',
-    action: 'Free 15-minute consultation',
+    action: 'Free 30-minute consultation',
     href: SITE_CONFIG.links.scheduleCall,
     buttonText: 'Schedule Now',
     external: true,
@@ -105,7 +105,7 @@ export default function ContactPage() {
               <div className="grid gap-2 text-gray-600">
                 <div className="flex justify-between">
                   <span>Monday - Friday</span>
-                  <span className="font-medium text-gray-900">9:00 AM - 5:00 PM CST</span>
+                  <span className="font-medium text-gray-900">9:00 AM - 6:00 PM Central</span>
                 </div>
                 <div className="flex justify-between">
                   <span>Saturday - Sunday</span>

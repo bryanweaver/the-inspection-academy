@@ -1,51 +1,27 @@
 import Link from 'next/link';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Clock } from 'lucide-react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Container, Section } from '@/components/layout';
+import { blogPosts } from '@/data/blog-posts';
+import type { Metadata } from 'next';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'Blog | The Inspection Academy',
   description: 'Expert insights, guidance, and practical advice for aspiring and current home inspectors in Texas.',
+  openGraph: {
+    title: 'The Inspection Academy Blog',
+    description: 'Expert insights, guidance, and practical advice for aspiring and current home inspectors in Texas.',
+    url: 'https://theinspectionacademy.com/blog',
+    siteName: 'The Inspection Academy',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'The Inspection Academy Blog',
+    description: 'Expert insights, guidance, and practical advice for aspiring and current home inspectors in Texas.',
+  },
 };
-
-const blogPosts = [
-  {
-    slug: 'comparing-home-inspector-schools',
-    title: 'Comparing Home Inspector Schools in Texas',
-    excerpt: 'When it comes to choosing a home inspection school, not all programs are created equal. Learn what to look for when comparing your options.',
-    category: 'Choosing a School',
-    date: 'January 25, 2025',
-  },
-  {
-    slug: 'truth-about-traditional-education',
-    title: 'The Truth About Traditional Home Inspector Education',
-    excerpt: 'Traditional Texas home inspector education is broken. Too often, it fails to prepare students for the rigorous licensing exam.',
-    category: 'Industry Insights',
-    date: 'January 20, 2025',
-  },
-  {
-    slug: 'going-beyond-minimum-requirements',
-    title: 'Going Beyond Texas Minimum Educational Requirements',
-    excerpt: 'TREC sets basic standards for education providers, but meeting minimums doesn\'t guarantee student success. Here\'s why we go further.',
-    category: 'Education',
-    date: 'January 15, 2025',
-  },
-  {
-    slug: 'adult-learning-theory',
-    title: 'How Adult Learning Theory Improves Exam Pass Rates',
-    excerpt: 'Research shows that adults learn differently than children. Our curriculum is designed using proven Adult Learning Theory principles.',
-    category: 'Learning Science',
-    date: 'January 10, 2025',
-  },
-  {
-    slug: 'nhie-exam-preparation',
-    title: 'Preparing for the National Home Inspector Examination',
-    excerpt: 'The NHIE covers an overwhelming amount of information. Here\'s how to approach your exam preparation strategically.',
-    category: 'Exam Prep',
-    date: 'January 5, 2025',
-  },
-];
 
 export default function BlogPage() {
   return (
@@ -74,7 +50,13 @@ export default function BlogPage() {
                   <CardHeader>
                     <div className="flex items-center gap-3 mb-2">
                       <Badge variant="secondary">{post.category}</Badge>
-                      <span className="text-sm text-gray-500">{post.date}</span>
+                      <span className="text-sm text-gray-500">
+                        {new Date(post.date).toLocaleDateString('en-US', {
+                          year: 'numeric',
+                          month: 'long',
+                          day: 'numeric',
+                        })}
+                      </span>
                     </div>
                     <CardTitle className="text-xl hover:text-primary transition-colors">
                       <Link href={`/blog/${post.slug}`}>
@@ -86,13 +68,19 @@ export default function BlogPage() {
                     </CardDescription>
                   </CardHeader>
                   <CardContent>
-                    <Link
-                      href={`/blog/${post.slug}`}
-                      className="inline-flex items-center text-primary hover:underline font-medium"
-                    >
-                      Read More
-                      <ArrowRight className="ml-2 h-4 w-4" />
-                    </Link>
+                    <div className="flex items-center justify-between">
+                      <Link
+                        href={`/blog/${post.slug}`}
+                        className="inline-flex items-center text-primary hover:underline font-medium"
+                      >
+                        Read More
+                        <ArrowRight className="ml-2 h-4 w-4" />
+                      </Link>
+                      <span className="text-sm text-gray-500 flex items-center">
+                        <Clock className="mr-1 h-4 w-4" />
+                        {post.readTime}
+                      </span>
+                    </div>
                   </CardContent>
                 </Card>
               ))}

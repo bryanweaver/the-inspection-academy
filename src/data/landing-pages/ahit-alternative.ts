@@ -47,7 +47,7 @@ export interface Testimonial {
 export const pageMetadata = {
   title: 'AHIT Alternative Texas | TIA vs AHIT: 67% vs 51% Pass Rate',
   description:
-    "Comparing AHIT to TIA? See official TREC data: TIA 67% vs AHIT 51.45%. Save $704 and get better odds of passing first try. See the comparison.",
+    "Comparing AHIT to TIA? See official TREC data: TIA 67% vs AHIT 51.45%. TIA includes books at comparable price. See the comparison.",
   url: 'https://theinspectionacademy.com/ahit-alternative',
 };
 
@@ -57,17 +57,17 @@ export const heroContent = {
   badgeLink: 'https://www.trec.texas.gov/education/education-provider-exam-passage-rates-inspectors',
   h1: 'The AHIT Alternative',
   h1Accent: 'That Actually Works',
-  h2: '67% pass rate vs AHIT\'s 51% — at $704 less',
+  h2: '67% pass rate vs AHIT\'s 51% — and books are included',
   description: `Looking at AHIT for your Texas home inspector license? Before you enroll, compare the official TREC pass rates.
 
 AHIT is the largest school in Texas, but not the highest performing. The Inspection Academy delivers significantly better results.`,
   ctaPrimary: 'Start Your Training Today',
   ctaPrimarySubtext: 'TREC approved • 0% financing available',
-  ctaSecondary: 'Schedule a Free Call',
+  ctaSecondary: 'Schedule a Free Meeting',
   // Stat badges for hero
   statBadges: [
     { value: '67%', label: 'TIA Pass Rate', color: 'success' },
-    { value: '$704', label: 'You Save', color: 'primary' },
+    { value: '✓', label: 'Books Included', color: 'primary' },
     { value: '51%', label: 'AHIT Pass Rate', color: 'danger' },
   ],
   socialProof: 'Texas inspectors trust TIA for higher pass rates',
@@ -87,9 +87,10 @@ export const comparisonFeatures: ComparisonFeature[] = [
     ahit: true,
   },
   {
-    feature: 'NHIE Textbooks',
+    feature: 'NHIE Textbooks Included',
     tia: true,
-    ahit: true,
+    ahit: false,
+    highlight: true,
   },
   {
     feature: 'Embedded Practice Questions',
@@ -137,12 +138,6 @@ export const comparisonFeatures: ComparisonFeature[] = [
     ahit: '51.45%',
     highlight: true,
   },
-  {
-    feature: 'Your Savings',
-    tia: '$704',
-    ahit: '—',
-    highlight: true,
-  },
 ];
 
 export const comparisonNote =
@@ -150,7 +145,7 @@ export const comparisonNote =
 export const comparisonNoteLink =
   'https://www.trec.texas.gov/education/education-provider-exam-passage-rates-inspectors';
 export const comparisonInsight =
-  "Key Insight: While AHIT is the largest school in Texas (241 students, 42% market share), The Inspection Academy delivers 15.55 percentage points higher pass rates at $704 less total cost.";
+  "Key Insight: While AHIT is the largest school in Texas (241 students, 42% market share), The Inspection Academy delivers 15.55 percentage points higher pass rates — and includes NHIE textbooks at comparable price.";
 
 // Five reasons section
 export const fiveReasons: Reason[] = [
@@ -169,18 +164,17 @@ export const fiveReasons: Reason[] = [
     icon: 'TrendingUp',
   },
   {
-    id: 'lower-cost',
+    id: 'books-included',
     number: 2,
-    title: 'Lower Total Cost',
-    subtitle: 'Save $704',
+    title: 'Books Included',
+    subtitle: 'At Comparable Price',
     description:
-      "And you get MORE included: 20,000+ embedded questions, BTP exam prep, unlimited practice tests, Spectora training—all at no extra cost.",
+      "TIA includes NHIE textbooks at comparable price. AHIT's package doesn't — you'll pay extra. Plus you get 20,000+ embedded questions, BTP exam prep, unlimited practice tests, and Spectora training.",
     stats: {
-      tia: 'TIA Complete System: $2,495',
-      ahit: 'AHIT Advanced: $3,199',
-      difference: 'Your savings: $704',
+      tia: 'TIA: Books included at comparable price',
+      ahit: 'AHIT: Books not included — additional cost',
     },
-    icon: 'DollarSign',
+    icon: 'BookOpen',
   },
   {
     id: 'texas-based',
@@ -244,9 +238,7 @@ TIA performs significantly above it.`,
 // Cost of failure section
 export const costOfFailureContent = {
   title: 'Why Pass Rates Matter More Than Price',
-  description: `AHIT might seem like "just" $704 more than TIA, but that's before factoring in the real cost of their lower pass rate.
-
-With a 51.45% pass rate, you have coin-flip odds. If you fail your first attempt:`,
+  description: `At comparable prices, pass rate is what separates the schools. With AHIT's 51.45% pass rate, you have coin-flip odds. If you fail your first attempt:`,
   costs: [
     '$200 retake fee',
     '2-3 months additional study time',
@@ -255,7 +247,7 @@ With a 51.45% pass rate, you have coin-flip odds. If you fail your first attempt
   ],
   totalCost: 'Total cost of one failure: $5,000-$15,000+',
   conclusion:
-    "Spending $2,495 with TIA's 67% pass rate is far smarter than spending $3,199 with AHIT's 51% pass rate.",
+    "At comparable price points, TIA's 67% pass rate and included books make it the smarter choice over AHIT's 51% pass rate.",
 };
 
 // FAQ section
@@ -271,14 +263,9 @@ export const ahitFAQs: FAQ[] = [
       "Teaching methodology. AHIT uses a national curriculum adapted for Texas with traditional information delivery. TIA builds Texas-specific content using adult learning theory, spaced repetition, and active engagement with 20,000+ embedded practice questions.",
   },
   {
-    question: 'Does AHIT offer payment plans?',
-    answer:
-      'AHIT offers payment plans through contractual agreements with automatic bank withdrawals. TIA offers both traditional payment plans AND a true month-to-month $199 subscription you can cancel anytime without penalty.',
-  },
-  {
     question: 'Which is better for Texas students - AHIT or TIA?',
     answer:
-      "According to official TREC data, TIA students pass at 67% vs AHIT's 51.45%, TIA costs $704 less, and TIA includes more exam prep resources. Choose based on verified pass rates and total value, not just brand recognition.",
+      "According to official TREC data, TIA students pass at 67% vs AHIT's 51.45%. At comparable prices, TIA includes NHIE textbooks and more exam prep resources. Choose based on verified pass rates and total value, not just brand recognition.",
   },
   {
     question: "Is AHIT's larger size an advantage?",
@@ -298,7 +285,7 @@ export const finalCTAContent = {
   description: "Don't settle for coin-flip odds when you can significantly improve your chances.",
   benefits: [
     "67% pass rate vs AHIT's 51.45%",
-    'Save $704 on total cost',
+    'Books included at comparable price',
     'More exam prep included',
     'Texas-based and Texas-focused',
   ],
@@ -328,7 +315,7 @@ export const testimonials: Testimonial[] = [
   },
   {
     id: '3',
-    quote: "I almost went with AHIT because of name recognition. So glad I looked at the actual TREC data. TIA's pass rate speaks for itself, and I saved $700.",
+    quote: "I almost went with AHIT because of name recognition. So glad I looked at the actual TREC data. TIA's pass rate speaks for itself, and the books were included.",
     author: 'Robert Chen',
     location: 'Houston, TX',
     result: 'Passed first try',
@@ -345,7 +332,7 @@ export const testimonialsContent = {
 export const stickyCTAContent = {
   text: 'Ready to start?',
   buttonText: 'Enroll Now - $2,495',
-  subtext: '67% pass rate • Save $704',
+  subtext: '67% pass rate • Books included',
 };
 
 // Urgency banner content
@@ -363,16 +350,16 @@ export const headlineVariants = {
   control: {
     h1: 'The AHIT Alternative',
     h1Accent: 'That Actually Works',
-    h2: '67% pass rate vs AHIT\'s 51% — at $704 less',
+    h2: '67% pass rate vs AHIT\'s 51% — and books are included',
   },
   variantA: {
     h1: 'Why Top Students Choose TIA',
     h1Accent: 'Over AHIT',
-    h2: 'Official TREC data: 67% pass rate vs 51% — Save $704',
+    h2: 'Official TREC data: 67% pass rate vs 51% — books included',
   },
   variantB: {
     h1: 'Pass Your Exam',
     h1Accent: 'On the First Try',
-    h2: 'TIA: 67% pass rate • AHIT: 51% • You save $704',
+    h2: 'TIA: 67% pass rate • AHIT: 51% • Books included',
   },
 };

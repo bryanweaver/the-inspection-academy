@@ -16,19 +16,19 @@ const subscriptionPlans = [
     term: '12 Months',
     professionalMonthly: 208,
     realEstateMonthly: 150,
-    downPayment: 'Required',
+    downPayment: 150,
   },
   {
     term: '18 Months',
     professionalMonthly: 139,
     realEstateMonthly: 100,
-    downPayment: 'Required',
+    downPayment: 250,
   },
   {
     term: '24 Months',
     professionalMonthly: 104,
     realEstateMonthly: 75,
-    downPayment: 'Required',
+    downPayment: 350,
   },
 ];
 
@@ -57,7 +57,7 @@ const faqs = [
   },
   {
     question: 'Why are down payments necessary?',
-    answer: 'Down payments help cover the costs of onboarding students to our Learning Management System, distributing virtual textbooks, third-party proctored testing, and payment processing fees.',
+    answer: 'Down payments help cover the costs of onboarding students to our Learning Management System, distributing virtual textbooks, and payment processing fees.',
   },
   {
     question: 'What happens if I miss a payment?',
@@ -123,6 +123,7 @@ export default function SubscriptionsPage() {
                 <thead>
                   <tr className="bg-gray-100">
                     <th className="p-4 text-left font-semibold text-gray-900 border">Term</th>
+                    <th className="p-4 text-center font-semibold text-gray-900 border">Down Payment</th>
                     <th className="p-4 text-center font-semibold text-gray-900 border">
                       Professional Bundle
                       <span className="block text-sm font-normal text-gray-500">($2,495 total)</span>
@@ -137,6 +138,9 @@ export default function SubscriptionsPage() {
                   {subscriptionPlans.map((plan) => (
                     <tr key={plan.term} className="hover:bg-gray-50">
                       <td className="p-4 border font-medium">{plan.term}</td>
+                      <td className="p-4 border text-center">
+                        <span className="text-xl font-bold text-gray-900">${plan.downPayment}</span>
+                      </td>
                       <td className="p-4 border text-center">
                         <span className="text-2xl font-bold text-gray-900">${plan.professionalMonthly}</span>
                         <span className="text-gray-500">/mo</span>
