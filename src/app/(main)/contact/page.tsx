@@ -22,7 +22,7 @@ const contactMethods = [
     icon: Mail,
     title: 'Email Us',
     description: 'Get a response within 24 hours',
-    action: SITE_CONFIG.email,
+    action: 'Send us an email',
     href: `mailto:${SITE_CONFIG.email}`,
     buttonText: 'Send Email',
   },
