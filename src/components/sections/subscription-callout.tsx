@@ -1,9 +1,20 @@
+'use client';
+
 import Link from 'next/link';
 import { CreditCard, ChevronRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Container, Section } from '@/components/layout';
+import { trackEvent } from '@/lib/analytics';
 
 export function SubscriptionCallout() {
+  const handleSubscriptionClick = () => {
+    trackEvent('cta_click', {
+      button_text: 'View Subscription Options',
+      button_location: 'subscription_callout',
+      button_variant: 'secondary',
+    });
+  };
+
   return (
     <Section background="gray">
       <Container>
@@ -37,7 +48,7 @@ export function SubscriptionCallout() {
             </p>
           </div>
 
-          <Button size="lg" variant="outline" asChild>
+          <Button size="lg" variant="outline" asChild onClick={handleSubscriptionClick}>
             <Link href="/subscriptions">
               View Subscription Options
               <ChevronRight className="ml-2 h-5 w-5" />

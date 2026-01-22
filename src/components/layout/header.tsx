@@ -7,9 +7,18 @@ import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { Container } from './container';
 import { NAV_ITEMS, SITE_CONFIG } from '@/lib/constants';
+import { trackScheduleCall, trackEvent } from '@/lib/analytics';
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false);
+
+  const handleScheduleClick = () => {
+    trackScheduleCall('header');
+  };
+
+  const handlePhoneClick = () => {
+    trackEvent('phone_call', { location: 'header' });
+  };
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60">
@@ -37,12 +46,13 @@ export function Header() {
           <div className="hidden md:flex items-center space-x-4">
             <a
               href={`tel:${SITE_CONFIG.phone}`}
+              onClick={handlePhoneClick}
               className="flex items-center text-sm text-gray-600 hover:text-primary"
             >
               <Phone className="mr-2 h-4 w-4" />
               {SITE_CONFIG.phone}
             </a>
-            <Button asChild>
+            <Button asChild onClick={handleScheduleClick}>
               <a href={SITE_CONFIG.links.scheduleCall} target="_blank" rel="noopener noreferrer">
                 Book an Online Meeting
               </a>
@@ -72,12 +82,13 @@ export function Header() {
                 <hr className="my-4" />
                 <a
                   href={`tel:${SITE_CONFIG.phone}`}
+                  onClick={handlePhoneClick}
                   className="flex items-center text-lg text-gray-600 hover:text-primary"
                 >
                   <Phone className="mr-2 h-5 w-5" />
                   {SITE_CONFIG.phone}
                 </a>
-                <Button asChild className="w-full mt-4">
+                <Button asChild className="w-full mt-4" onClick={handleScheduleClick}>
                   <a href={SITE_CONFIG.links.scheduleCall} target="_blank" rel="noopener noreferrer">
                     Book an Online Meeting
                   </a>

@@ -1,10 +1,25 @@
+'use client';
+
 import Link from 'next/link';
 import { Shield, ChevronRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Container, Section } from '@/components/layout';
 import { SITE_CONFIG } from '@/lib/constants';
+import { trackEnrollClick, trackEvent } from '@/lib/analytics';
 
 export function MoneyBackGuarantee() {
+  const handleEnrollClick = () => {
+    trackEnrollClick('money_back_guarantee');
+  };
+
+  const handleTermsClick = () => {
+    trackEvent('cta_click', {
+      button_text: 'See Full Terms',
+      button_location: 'money_back_guarantee',
+      button_variant: 'secondary',
+    });
+  };
+
   return (
     <Section background="gray">
       <Container>
@@ -39,12 +54,16 @@ export function MoneyBackGuarantee() {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button variant="outline" asChild>
+              <Button variant="outline" asChild onClick={handleTermsClick}>
                 <Link href="/money-back-guarantee">
                   See Full Terms
                 </Link>
               </Button>
-              <Button className="bg-amber-500 hover:bg-amber-600 text-black font-semibold" asChild>
+              <Button
+                className="bg-amber-500 hover:bg-amber-600 text-black font-semibold"
+                asChild
+                onClick={handleEnrollClick}
+              >
                 <a href={SITE_CONFIG.links.courseCatalog} target="_blank" rel="noopener noreferrer">
                   Start Your Training
                   <ChevronRight className="ml-2 h-4 w-4" />

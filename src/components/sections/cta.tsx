@@ -1,8 +1,11 @@
+'use client';
+
 import Link from 'next/link';
 import { Phone, CheckCircle, ChevronRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Container, Section } from '@/components/layout';
 import { SITE_CONFIG } from '@/lib/constants';
+import { trackEnrollClick, trackScheduleCall, trackEvent } from '@/lib/analytics';
 
 const benefits = [
   '67% pass rate—#2 in Texas',
@@ -13,6 +16,18 @@ const benefits = [
 ];
 
 export function CTA() {
+  const handleEnrollClick = () => {
+    trackEnrollClick('final_cta');
+  };
+
+  const handleScheduleClick = () => {
+    trackScheduleCall('final_cta');
+  };
+
+  const handlePhoneClick = () => {
+    trackEvent('phone_call', { location: 'final_cta' });
+  };
+
   return (
     <Section className="bg-primary">
       <Container>
@@ -39,13 +54,24 @@ export function CTA() {
 
           {/* CTAs */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-            <Button size="lg" className="bg-amber-500 hover:bg-amber-600 text-black font-semibold" asChild>
+            <Button
+              size="lg"
+              className="bg-amber-500 hover:bg-amber-600 text-black font-semibold"
+              asChild
+              onClick={handleEnrollClick}
+            >
               <a href={SITE_CONFIG.links.courseCatalog} target="_blank" rel="noopener noreferrer">
                 Start Your Training
                 <ChevronRight className="ml-2 h-5 w-5" />
               </a>
             </Button>
-            <Button size="lg" variant="outline" className="bg-transparent text-white border-white hover:bg-white/10" asChild>
+            <Button
+              size="lg"
+              variant="outline"
+              className="bg-transparent text-white border-white hover:bg-white/10"
+              asChild
+              onClick={handleScheduleClick}
+            >
               <a href={SITE_CONFIG.links.scheduleCall} target="_blank" rel="noopener noreferrer">
                 Book an Online Meeting
               </a>
@@ -55,6 +81,7 @@ export function CTA() {
           {/* Phone */}
           <a
             href={`tel:${SITE_CONFIG.phone}`}
+            onClick={handlePhoneClick}
             className="inline-flex items-center text-white/90 hover:text-white transition-colors text-lg"
           >
             <Phone className="mr-2 h-5 w-5" />
