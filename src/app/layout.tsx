@@ -12,8 +12,15 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+// Use production URL in production, Vercel preview URL otherwise
+const baseUrl = process.env.VERCEL_ENV === 'production'
+  ? 'https://theinspectionacademy.com'
+  : process.env.VERCEL_URL
+    ? `https://${process.env.VERCEL_URL}`
+    : 'http://localhost:3000';
+
 export const metadata: Metadata = {
-  metadataBase: new URL('https://theinspectionacademy.com'),
+  metadataBase: new URL(baseUrl),
   title: "The Inspection Academy | Texas Home Inspector Training",
   description: "Pass your Texas home inspector exam on the first try. TREC-approved courses with proven Adult Learning Theory. Get licensed faster with our comprehensive training program.",
   keywords: ["Texas home inspector training", "TREC approved courses", "home inspector licensing", "Texas inspector exam prep"],
