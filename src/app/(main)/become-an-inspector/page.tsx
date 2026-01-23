@@ -9,6 +9,16 @@ import { SITE_CONFIG } from '@/lib/constants';
 export const metadata = {
   title: 'How to Become a Home Inspector in Texas | The Inspection Academy',
   description: 'Complete guide to becoming a licensed home inspector in Texas. Learn about TREC requirements, licensing paths, and education requirements.',
+  openGraph: {
+    title: 'How to Become a Home Inspector in Texas',
+    description: 'Step-by-step guide to getting your Texas home inspector license. TREC requirements, education paths, and career info.',
+    url: 'https://theinspectionacademy.com/become-an-inspector',
+    siteName: 'The Inspection Academy',
+    images: [{ url: 'https://theinspectionacademy.com/og-image.png', width: 1200, height: 630 }],
+  },
+  alternates: {
+    canonical: 'https://theinspectionacademy.com/become-an-inspector',
+  },
 };
 
 const licenseLevels = [

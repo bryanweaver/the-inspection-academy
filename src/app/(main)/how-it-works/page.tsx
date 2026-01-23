@@ -8,6 +8,16 @@ import { SITE_CONFIG } from '@/lib/constants';
 export const metadata = {
   title: 'How It Works | The Inspection Academy',
   description: 'Learn how our Adult Learning Theory approach helps you pass your Texas home inspector exam on the first try.',
+  openGraph: {
+    title: 'How It Works | The Inspection Academy',
+    description: 'Our proven 3-step process using Adult Learning Theory helps you pass your Texas home inspector exam.',
+    url: 'https://theinspectionacademy.com/how-it-works',
+    siteName: 'The Inspection Academy',
+    images: [{ url: 'https://theinspectionacademy.com/og-image.png', width: 1200, height: 630 }],
+  },
+  alternates: {
+    canonical: 'https://theinspectionacademy.com/how-it-works',
+  },
 };
 
 const steps = [

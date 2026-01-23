@@ -8,6 +8,16 @@ import { SITE_CONFIG } from '@/lib/constants';
 export const metadata = {
   title: 'FAQ | The Inspection Academy',
   description: 'Frequently asked questions about Texas home inspector training, licensing, and The Inspection Academy courses.',
+  openGraph: {
+    title: 'FAQ | The Inspection Academy',
+    description: 'Get answers to common questions about Texas home inspector training, licensing requirements, and our courses.',
+    url: 'https://theinspectionacademy.com/faq',
+    siteName: 'The Inspection Academy',
+    images: [{ url: 'https://theinspectionacademy.com/og-image.png', width: 1200, height: 630 }],
+  },
+  alternates: {
+    canonical: 'https://theinspectionacademy.com/faq',
+  },
 };
 
 const faqCategories = [

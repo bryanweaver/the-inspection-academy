@@ -10,7 +10,17 @@ import { cn } from '@/lib/utils';
 
 export const metadata = {
   title: 'Courses | The Inspection Academy',
-  description: 'TREC-approved Texas home inspector training courses. Choose from Professional Inspector or Real Estate Inspector bundles.',
+  description: 'TREC-approved Texas home inspector training courses. Choose from Professional Inspector or Real Estate Inspector bundles. 67% pass rate.',
+  openGraph: {
+    title: 'Texas Home Inspector Courses | The Inspection Academy',
+    description: 'TREC-approved training courses with 67% first-time pass rate. Professional and Real Estate Inspector bundles available.',
+    url: 'https://theinspectionacademy.com/courses',
+    siteName: 'The Inspection Academy',
+    images: [{ url: 'https://theinspectionacademy.com/og-image.png', width: 1200, height: 630 }],
+  },
+  alternates: {
+    canonical: 'https://theinspectionacademy.com/courses',
+  },
 };
 
 export default function CoursesPage() {

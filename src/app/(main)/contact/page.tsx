@@ -6,7 +6,17 @@ import { SITE_CONFIG } from '@/lib/constants';
 
 export const metadata = {
   title: 'Contact | The Inspection Academy',
-  description: 'Get in touch with The Inspection Academy. Schedule a meeting, send an email, or give us a call.',
+  description: 'Get in touch with The Inspection Academy. Schedule a meeting, send an email, or call us at 281-917-7360.',
+  openGraph: {
+    title: 'Contact | The Inspection Academy',
+    description: 'Have questions about Texas home inspector training? Schedule a free meeting or call us at 281-917-7360.',
+    url: 'https://theinspectionacademy.com/contact',
+    siteName: 'The Inspection Academy',
+    images: [{ url: 'https://theinspectionacademy.com/og-image.png', width: 1200, height: 630 }],
+  },
+  alternates: {
+    canonical: 'https://theinspectionacademy.com/contact',
+  },
 };
 
 const contactMethods = [

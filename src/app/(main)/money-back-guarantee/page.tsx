@@ -7,6 +7,16 @@ import { SITE_CONFIG } from '@/lib/constants';
 export const metadata = {
   title: 'Money-Back Guarantee Terms & Conditions | The Inspection Academy',
   description: 'Read the full terms and conditions for The Inspection Academy\'s pass-or-get-your-money-back guarantee.',
+  openGraph: {
+    title: 'Money-Back Guarantee | The Inspection Academy',
+    description: 'Pass your Texas home inspector exam or get your money back. Read our full guarantee terms.',
+    url: 'https://theinspectionacademy.com/money-back-guarantee',
+    siteName: 'The Inspection Academy',
+    images: [{ url: 'https://theinspectionacademy.com/og-image.png', width: 1200, height: 630 }],
+  },
+  alternates: {
+    canonical: 'https://theinspectionacademy.com/money-back-guarantee',
+  },
 };
 
 export default function TermsPage() {

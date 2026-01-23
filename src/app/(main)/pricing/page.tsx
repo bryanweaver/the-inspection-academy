@@ -11,7 +11,17 @@ import { cn } from '@/lib/utils';
 
 export const metadata = {
   title: 'Pricing | The Inspection Academy',
-  description: 'Transparent pricing for Texas home inspector training. 0% interest financing available.',
+  description: 'Transparent pricing for Texas home inspector training. Starting at $1,795. 0% interest financing available.',
+  openGraph: {
+    title: 'Pricing | The Inspection Academy',
+    description: 'Texas home inspector training starting at $1,795. 0% interest payment plans available.',
+    url: 'https://theinspectionacademy.com/pricing',
+    siteName: 'The Inspection Academy',
+    images: [{ url: 'https://theinspectionacademy.com/og-image.png', width: 1200, height: 630 }],
+  },
+  alternates: {
+    canonical: 'https://theinspectionacademy.com/pricing',
+  },
 };
 
 const faqs = [

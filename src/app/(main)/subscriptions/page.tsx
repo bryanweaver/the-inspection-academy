@@ -9,6 +9,16 @@ import { SITE_CONFIG } from '@/lib/constants';
 export const metadata = {
   title: 'Subscription Payment Plans | The Inspection Academy',
   description: '0% interest subscription payment plans for Texas home inspector training. 12, 18, and 24 month terms available.',
+  openGraph: {
+    title: '0% Interest Payment Plans | The Inspection Academy',
+    description: 'Affordable payment plans for Texas home inspector training. No credit check. 12, 18, or 24 month terms.',
+    url: 'https://theinspectionacademy.com/subscriptions',
+    siteName: 'The Inspection Academy',
+    images: [{ url: 'https://theinspectionacademy.com/og-image.png', width: 1200, height: 630 }],
+  },
+  alternates: {
+    canonical: 'https://theinspectionacademy.com/subscriptions',
+  },
 };
 
 const subscriptionPlans = [
