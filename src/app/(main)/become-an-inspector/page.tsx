@@ -14,7 +14,7 @@ export const metadata = {
     description: 'Step-by-step guide to getting your Texas home inspector license. TREC requirements, education paths, and career info.',
     url: 'https://theinspectionacademy.com/become-an-inspector',
     siteName: 'The Inspection Academy',
-    images: [{ url: 'https://theinspectionacademy.com/og-image.png', width: 1200, height: 630 }],
+    images: [{ url: '/og-image.png', width: 1200, height: 630 }],
   },
   alternates: {
     canonical: 'https://theinspectionacademy.com/become-an-inspector',

@@ -29,13 +29,13 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'The Inspection Academy | Texas Home Inspector Training',
     description:
-      'Pass your Texas home inspector exam on the first try. 67% pass rate (#2 in Texas). TREC-approved courses.',
+      'Pass your Texas home inspector exam on the first try with our TREC-approved training. 67% pass rate (#2 in Texas). Money-back guarantee included.',
     type: 'website',
     url: 'https://theinspectionacademy.com',
     siteName: 'The Inspection Academy',
     images: [
       {
-        url: 'https://theinspectionacademy.com/og-image.png',
+        url: '/og-image.png',
         width: 1200,
         height: 630,
         alt: 'The Inspection Academy - Texas Home Inspector Training',
@@ -46,8 +46,8 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'The Inspection Academy | Texas Home Inspector Training',
     description:
-      'Pass your Texas home inspector exam on the first try. 67% pass rate (#2 in Texas).',
-    images: ['https://theinspectionacademy.com/og-image.png'],
+      'Pass your Texas home inspector exam on the first try with our TREC-approved training. 67% pass rate (#2 in Texas). Money-back guarantee included.',
+    images: ['/og-image.png'],
   },
   alternates: {
     canonical: 'https://theinspectionacademy.com',

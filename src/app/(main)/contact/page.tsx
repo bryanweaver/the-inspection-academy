@@ -12,7 +12,7 @@ export const metadata = {
     description: 'Have questions about Texas home inspector training? Schedule a free meeting or call us at 281-917-7360.',
     url: 'https://theinspectionacademy.com/contact',
     siteName: 'The Inspection Academy',
-    images: [{ url: 'https://theinspectionacademy.com/og-image.png', width: 1200, height: 630 }],
+    images: [{ url: '/og-image.png', width: 1200, height: 630 }],
   },
   alternates: {
     canonical: 'https://theinspectionacademy.com/contact',

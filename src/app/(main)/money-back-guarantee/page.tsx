@@ -12,7 +12,7 @@ export const metadata = {
     description: 'Pass your Texas home inspector exam or get your money back. Read our full guarantee terms.',
     url: 'https://theinspectionacademy.com/money-back-guarantee',
     siteName: 'The Inspection Academy',
-    images: [{ url: 'https://theinspectionacademy.com/og-image.png', width: 1200, height: 630 }],
+    images: [{ url: '/og-image.png', width: 1200, height: 630 }],
   },
   alternates: {
     canonical: 'https://theinspectionacademy.com/money-back-guarantee',

@@ -16,7 +16,7 @@ export const metadata = {
     description: 'TREC-approved training courses with 67% first-time pass rate. Professional and Real Estate Inspector bundles available.',
     url: 'https://theinspectionacademy.com/courses',
     siteName: 'The Inspection Academy',
-    images: [{ url: 'https://theinspectionacademy.com/og-image.png', width: 1200, height: 630 }],
+    images: [{ url: '/og-image.png', width: 1200, height: 630 }],
   },
   alternates: {
     canonical: 'https://theinspectionacademy.com/courses',

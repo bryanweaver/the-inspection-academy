@@ -13,7 +13,7 @@ export const metadata = {
     description: 'Our proven 3-step process using Adult Learning Theory helps you pass your Texas home inspector exam.',
     url: 'https://theinspectionacademy.com/how-it-works',
     siteName: 'The Inspection Academy',
-    images: [{ url: 'https://theinspectionacademy.com/og-image.png', width: 1200, height: 630 }],
+    images: [{ url: '/og-image.png', width: 1200, height: 630 }],
   },
   alternates: {
     canonical: 'https://theinspectionacademy.com/how-it-works',

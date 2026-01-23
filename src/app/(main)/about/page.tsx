@@ -13,7 +13,7 @@ export const metadata = {
     description: 'We\'re educators who believe everyone deserves access to quality training that actually works. 67% pass rate - #2 in Texas.',
     url: 'https://theinspectionacademy.com/about',
     siteName: 'The Inspection Academy',
-    images: [{ url: 'https://theinspectionacademy.com/og-image.png', width: 1200, height: 630 }],
+    images: [{ url: '/og-image.png', width: 1200, height: 630 }],
   },
   alternates: {
     canonical: 'https://theinspectionacademy.com/about',

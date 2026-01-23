@@ -13,6 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://theinspectionacademy.com'),
   title: "The Inspection Academy | Texas Home Inspector Training",
   description: "Pass your Texas home inspector exam on the first try. TREC-approved courses with proven Adult Learning Theory. Get licensed faster with our comprehensive training program.",
   keywords: ["Texas home inspector training", "TREC approved courses", "home inspector licensing", "Texas inspector exam prep"],
@@ -22,6 +23,14 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     siteName: "The Inspection Academy",
+    images: [
+      {
+        url: '/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'The Inspection Academy - Texas Home Inspector Training',
+      },
+    ],
   },
 };
 

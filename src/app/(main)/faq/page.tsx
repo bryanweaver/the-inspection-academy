@@ -13,7 +13,7 @@ export const metadata = {
     description: 'Get answers to common questions about Texas home inspector training, licensing requirements, and our courses.',
     url: 'https://theinspectionacademy.com/faq',
     siteName: 'The Inspection Academy',
-    images: [{ url: 'https://theinspectionacademy.com/og-image.png', width: 1200, height: 630 }],
+    images: [{ url: '/og-image.png', width: 1200, height: 630 }],
   },
   alternates: {
     canonical: 'https://theinspectionacademy.com/faq',
