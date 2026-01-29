@@ -11,7 +11,7 @@ const benefits = [
   '67% pass rate—#2 in Texas',
   'Built by educators AND inspectors',
   'Adaptive technology targets YOUR weak areas',
-  'Pass-or-refund guarantee—no fine print',
+  'Pass-or-refund guarantee',
   '0% interest payment plans available',
 ];
 
@@ -41,15 +41,25 @@ export function CTA() {
 
           {/* Benefits List */}
           <div className="flex flex-wrap justify-center gap-3 mb-8">
-            {benefits.map((benefit, index) => (
-              <div
-                key={index}
-                className="flex items-center bg-white/10 text-white text-sm px-4 py-2 rounded-full"
-              >
-                <CheckCircle className="mr-2 h-4 w-4 text-green-400" />
-                {benefit}
-              </div>
-            ))}
+            {benefits.map((benefit, index) => {
+              const isGuarantee = benefit.toLowerCase().includes('guarantee');
+              return (
+                <div
+                  key={index}
+                  className="flex items-center bg-white/10 text-white text-sm px-4 py-2 rounded-full"
+                >
+                  <CheckCircle className="mr-2 h-4 w-4 text-green-400" />
+                  {isGuarantee ? (
+                    <>
+                      <Link href="/money-back-guarantee" className="underline decoration-dotted decoration-white/40 underline-offset-2 hover:decoration-white/80">{benefit}</Link>
+                      <Link href="/money-back-guarantee" className="text-green-400 hover:text-green-300 align-super text-xs ml-0.5">*</Link>
+                    </>
+                  ) : (
+                    benefit
+                  )}
+                </div>
+              );
+            })}
           </div>
 
           {/* CTAs */}

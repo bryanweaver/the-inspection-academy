@@ -153,3 +153,76 @@
     @apply bg-background text-foreground antialiased;
   }
 }
+
+/* Subtle underline style for terms links */
+.terms-link {
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  text-decoration-color: rgba(34, 197, 94, 0.4);
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1.5px;
+  transition: text-decoration-color 0.2s ease;
+}
+.terms-link:hover {
+  text-decoration-color: rgba(34, 197, 94, 0.8);
+}
+
+/* MailerLite Form Overrides */
+.ml-embedded {
+  /* Hide the redundant form header since we have our own */
+  & .ml-form-embedHeader {
+    display: none !important;
+  }
+
+  /* Form container */
+  & .ml-form-embedBody {
+    padding: 0 !important;
+    background: transparent !important;
+  }
+
+  /* Input fields */
+  & .ml-form-embedBody input[type="text"],
+  & .ml-form-embedBody input[type="email"] {
+    border: 1px solid var(--border) !important;
+    border-radius: var(--radius) !important;
+    padding: 0.75rem 1rem !important;
+    font-size: 1rem !important;
+    transition: border-color 0.2s, box-shadow 0.2s !important;
+    background: var(--background) !important;
+  }
+
+  & .ml-form-embedBody input[type="text"]:focus,
+  & .ml-form-embedBody input[type="email"]:focus {
+    border-color: var(--primary) !important;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1) !important;
+    outline: none !important;
+  }
+
+  /* Submit button */
+  & .ml-form-embedBody button,
+  & .ml-form-embedBody .ml-form-embedSubmit button {
+    background-color: var(--primary) !important;
+    border-radius: var(--radius) !important;
+    padding: 0.75rem 1.5rem !important;
+    font-weight: 600 !important;
+    font-size: 1rem !important;
+    transition: background-color 0.2s !important;
+    border: none !important;
+  }
+
+  & .ml-form-embedBody button:hover,
+  & .ml-form-embedBody .ml-form-embedSubmit button:hover {
+    background-color: #1d4ed8 !important;
+  }
+
+  /* Success message */
+  & .ml-form-successBody {
+    color: var(--foreground) !important;
+  }
+
+  /* Remove MailerLite branding box shadow */
+  & .ml-form-embedWrapper {
+    box-shadow: none !important;
+    background: transparent !important;
+  }
+}

@@ -30,10 +30,18 @@ export function MoneyBackGuarantee() {
                 <Shield className="h-8 w-8 text-green-600" />
               </div>
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                Our Pass-or-Get-Your-Money-Back Guarantee
+                Our{' '}
+                <Link href="/money-back-guarantee" className="terms-link">
+                  Pass-or-Get-Your-Money-Back Guarantee
+                </Link>
+                <Link href="/money-back-guarantee" className="text-green-600 hover:text-green-700 align-super text-lg ml-0.5">*</Link>
               </h2>
               <p className="text-xl text-gray-700">
-                Pass your licensing exam on your first attempt — or we refund every dollar you paid.
+                Pass your licensing exam on your first attempt — or{' '}
+                <Link href="/money-back-guarantee" className="terms-link">
+                  we refund every dollar you paid
+                </Link>
+                <Link href="/money-back-guarantee" className="text-green-600 hover:text-green-700 align-super text-sm">*</Link>
               </p>
             </div>
 
@@ -42,7 +50,11 @@ export function MoneyBackGuarantee() {
                 Complete our training, pass five sample exams on Bulletproof Test Prep, take the state exam, and if you don&apos;t pass on your first try, we give you your money back.
               </p>
               <p className="text-gray-900 font-semibold">
-                No fine print. No games. Just a guarantee backed by real results.
+                No games. Just a{' '}
+                <Link href="/money-back-guarantee" className="terms-link">
+                  guarantee backed by real results
+                </Link>
+                <Link href="/money-back-guarantee" className="text-green-600 hover:text-green-700 align-super text-sm">*</Link>
               </p>
             </div>
 

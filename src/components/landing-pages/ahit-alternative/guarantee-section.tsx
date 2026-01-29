@@ -23,10 +23,17 @@ export function GuaranteeSection() {
                 <Shield className="h-8 w-8 text-green-600" />
               </div>
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                {guaranteeContent.title}
+                <Link href={guaranteeContent.termsLink} className="terms-link">
+                  {guaranteeContent.title}
+                </Link>
+                <Link href={guaranteeContent.termsLink} className="text-green-600 hover:text-green-700 align-super text-lg ml-0.5">*</Link>
               </h2>
               <p className="text-xl text-gray-700">
-                {guaranteeContent.mainText}
+                Pass your licensing exam on your first attempt — or{' '}
+                <Link href={guaranteeContent.termsLink} className="terms-link">
+                  we refund every dollar you paid
+                </Link>
+                <Link href={guaranteeContent.termsLink} className="text-green-600 hover:text-green-700 align-super text-sm">*</Link>
               </p>
             </div>
 
@@ -35,7 +42,11 @@ export function GuaranteeSection() {
                 {guaranteeContent.details}
               </p>
               <p className="text-gray-900 font-semibold">
-                {guaranteeContent.emphasis}
+                No games. Just a{' '}
+                <Link href={guaranteeContent.termsLink} className="terms-link">
+                  guarantee backed by real results
+                </Link>
+                <Link href={guaranteeContent.termsLink} className="text-green-600 hover:text-green-700 align-super text-sm">*</Link>
               </p>
             </div>
 

@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import {
   TrendingUp,
   DollarSign,
@@ -34,6 +35,7 @@ export function SixReasons() {
           <div className="space-y-6">
             {sixReasons.map((reason) => {
               const Icon = iconMap[reason.icon as keyof typeof iconMap];
+              const isGuarantee = reason.id === 'money-back-guarantee';
 
               return (
                 <Card key={reason.id} className="overflow-hidden">
@@ -54,7 +56,14 @@ export function SixReasons() {
                       {/* Content */}
                       <div className="flex-1">
                         <h3 className="text-xl font-bold text-gray-900 mb-1">
-                          {reason.title}
+                          {isGuarantee ? (
+                            <>
+                              <Link href="/money-back-guarantee" className="terms-link">{reason.title}</Link>
+                              <Link href="/money-back-guarantee" className="text-green-600 hover:text-green-700 align-super text-sm ml-0.5">*</Link>
+                            </>
+                          ) : (
+                            reason.title
+                          )}
                         </h3>
                         <p className="text-primary font-medium mb-3">
                           {reason.subtitle}
@@ -67,7 +76,14 @@ export function SixReasons() {
                                 TIA
                               </div>
                               <div className="text-sm text-gray-700">
-                                {reason.stats.tia}
+                                {isGuarantee ? (
+                                  <>
+                                    <Link href="/money-back-guarantee" className="terms-link">{reason.stats.tia}</Link>
+                                    <Link href="/money-back-guarantee" className="text-green-600 hover:text-green-700 align-super text-xs ml-0.5">*</Link>
+                                  </>
+                                ) : (
+                                  reason.stats.tia
+                                )}
                               </div>
                             </div>
                             <div className="bg-gray-50 border border-gray-200 rounded-lg p-3">

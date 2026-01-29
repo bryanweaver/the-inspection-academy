@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import { Check, X, ExternalLink, Award, ArrowRight } from 'lucide-react';
 import { Section, Container } from '@/components/layout';
 import { Card } from '@/components/ui/card';
@@ -14,7 +15,7 @@ import {
 import { SITE_CONFIG } from '@/lib/constants';
 import { trackOutboundClick, trackEnrollClick } from '@/lib/analytics';
 
-function FeatureValue({ value, isWinner }: { value: string | boolean; isWinner?: boolean }) {
+function FeatureValue({ value, isWinner, isGuarantee }: { value: string | boolean; isWinner?: boolean; isGuarantee?: boolean }) {
   if (typeof value === 'boolean') {
     return value ? (
       <Check className="h-5 w-5 text-green-500" />
@@ -22,7 +23,29 @@ function FeatureValue({ value, isWinner }: { value: string | boolean; isWinner?:
       <X className="h-5 w-5 text-red-500" />
     );
   }
+
+  if (isGuarantee && isWinner) {
+    return (
+      <span className="font-semibold text-green-600">
+        <Link href="/money-back-guarantee" className="terms-link">{value}</Link>
+        <Link href="/money-back-guarantee" className="text-green-600 hover:text-green-700 align-super text-xs ml-0.5">*</Link>
+      </span>
+    );
+  }
+
   return <span className={isWinner ? 'font-semibold text-green-600' : ''}>{value}</span>;
+}
+
+function FeatureLabel({ label, isGuarantee }: { label: string; isGuarantee?: boolean }) {
+  if (isGuarantee) {
+    return (
+      <>
+        <Link href="/money-back-guarantee" className="terms-link">{label}</Link>
+        <Link href="/money-back-guarantee" className="text-green-600 hover:text-green-700 align-super text-xs ml-0.5">*</Link>
+      </>
+    );
+  }
+  return <>{label}</>;
 }
 
 export function ComparisonTable() {
@@ -70,28 +93,31 @@ export function ComparisonTable() {
                   </tr>
                 </thead>
                 <tbody>
-                  {comparisonFeatures.map((feature, index) => (
-                    <tr
-                      key={feature.feature}
-                      className={`border-b last:border-b-0 ${
-                        feature.highlight ? 'bg-green-50/50' : ''
-                      }`}
-                    >
-                      <td className={`py-4 px-6 text-gray-700 ${feature.highlight ? 'font-semibold' : ''}`}>
-                        {feature.feature}
-                      </td>
-                      <td className="py-4 px-6 text-center text-gray-600">
-                        <div className="flex justify-center">
-                          <FeatureValue value={feature.ahit} />
-                        </div>
-                      </td>
-                      <td className={`py-4 px-4 text-center border-l-2 border-green-500 bg-green-50/30`}>
-                        <div className="flex justify-center">
-                          <FeatureValue value={feature.tia} isWinner={feature.highlight} />
-                        </div>
-                      </td>
-                    </tr>
-                  ))}
+                  {comparisonFeatures.map((feature, index) => {
+                    const isGuarantee = feature.feature.toLowerCase().includes('guarantee');
+                    return (
+                      <tr
+                        key={feature.feature}
+                        className={`border-b last:border-b-0 ${
+                          feature.highlight ? 'bg-green-50/50' : ''
+                        }`}
+                      >
+                        <td className={`py-4 px-6 text-gray-700 ${feature.highlight ? 'font-semibold' : ''}`}>
+                          <FeatureLabel label={feature.feature} isGuarantee={isGuarantee} />
+                        </td>
+                        <td className="py-4 px-6 text-center text-gray-600">
+                          <div className="flex justify-center">
+                            <FeatureValue value={feature.ahit} />
+                          </div>
+                        </td>
+                        <td className={`py-4 px-4 text-center border-l-2 border-green-500 bg-green-50/30`}>
+                          <div className="flex justify-center">
+                            <FeatureValue value={feature.tia} isWinner={feature.highlight} isGuarantee={isGuarantee} />
+                          </div>
+                        </td>
+                      </tr>
+                    );
+                  })}
                 </tbody>
               </table>
             </div>
@@ -104,30 +130,33 @@ export function ComparisonTable() {
                 TIA is the Recommended Choice
               </div>
               <div className="divide-y">
-                {comparisonFeatures.map((feature) => (
-                  <div
-                    key={feature.feature}
-                    className={`p-4 ${feature.highlight ? 'bg-green-50' : ''}`}
-                  >
-                    <div className="font-medium text-gray-900 mb-3">
-                      {feature.feature}
-                    </div>
-                    <div className="grid grid-cols-2 gap-4">
-                      <div className="text-center p-2 bg-gray-50 rounded">
-                        <div className="text-xs text-gray-500 mb-1">AHIT</div>
-                        <div className="flex justify-center">
-                          <FeatureValue value={feature.ahit} />
+                {comparisonFeatures.map((feature) => {
+                  const isGuarantee = feature.feature.toLowerCase().includes('guarantee');
+                  return (
+                    <div
+                      key={feature.feature}
+                      className={`p-4 ${feature.highlight ? 'bg-green-50' : ''}`}
+                    >
+                      <div className="font-medium text-gray-900 mb-3">
+                        <FeatureLabel label={feature.feature} isGuarantee={isGuarantee} />
+                      </div>
+                      <div className="grid grid-cols-2 gap-4">
+                        <div className="text-center p-2 bg-gray-50 rounded">
+                          <div className="text-xs text-gray-500 mb-1">AHIT</div>
+                          <div className="flex justify-center">
+                            <FeatureValue value={feature.ahit} />
+                          </div>
+                        </div>
+                        <div className="text-center p-2 bg-green-50 rounded border border-green-200">
+                          <div className="text-xs text-green-600 font-medium mb-1">TIA</div>
+                          <div className="flex justify-center">
+                            <FeatureValue value={feature.tia} isWinner={feature.highlight} isGuarantee={isGuarantee} />
+                          </div>
                         </div>
                       </div>
-                      <div className="text-center p-2 bg-green-50 rounded border border-green-200">
-                        <div className="text-xs text-green-600 font-medium mb-1">TIA</div>
-                        <div className="flex justify-center">
-                          <FeatureValue value={feature.tia} isWinner={feature.highlight} />
-                        </div>
-                      </div>
                     </div>
-                  </div>
-                ))}
+                  );
+                })}
               </div>
             </div>
           </Card>

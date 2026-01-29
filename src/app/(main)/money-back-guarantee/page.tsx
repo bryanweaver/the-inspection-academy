@@ -1,12 +1,12 @@
 import Link from 'next/link';
-import { Shield, CheckCircle, ChevronRight } from 'lucide-react';
+import { Shield, CheckCircle, ChevronRight, AlertCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Container, Section } from '@/components/layout';
 import { SITE_CONFIG } from '@/lib/constants';
 
 export const metadata = {
   title: 'Money-Back Guarantee Terms & Conditions | The Inspection Academy',
-  description: 'Read the full terms and conditions for The Inspection Academy\'s pass-or-get-your-money-back guarantee.',
+  description: 'Read the full terms and conditions for The Inspection Academy\'s pass-or-get-your-money-back guarantee. Effective February 1st, 2026.',
   openGraph: {
     title: 'Money-Back Guarantee | The Inspection Academy',
     description: 'Pass your Texas home inspector exam or get your money back. Read our full guarantee terms.',
@@ -30,10 +30,13 @@ export default function TermsPage() {
               <Shield className="h-8 w-8 text-green-600" />
             </div>
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-              Money-Back Guarantee Terms & Conditions
+              Money Back Guarantee — Terms & Conditions
             </h1>
+            <p className="text-sm text-gray-500 mb-4">
+              Effective Date: February 1st, 2026
+            </p>
             <p className="text-xl text-gray-600">
-              The Inspection Academy (&quot;TIA&quot;) offers a conditional money-back guarantee for students who complete all required training and exam-prep steps but do not pass the Texas Home Inspector Licensing Exam on their first attempt.
+              The Inspection Academy LLC (&quot;TIA&quot;) offers a Money Back Guarantee (&quot;Guarantee&quot;) to eligible students enrolled in TIA&apos;s Texas home inspector pre-licensing programs.
             </p>
           </div>
         </Container>
@@ -44,195 +47,224 @@ export default function TermsPage() {
         <Container>
           <div className="max-w-3xl mx-auto">
             <div className="prose prose-lg max-w-none">
-              {/* Intro */}
+              {/* Section 1 - Introduction */}
               <div className="bg-green-50 border border-green-200 rounded-xl p-6 mb-8">
                 <p className="text-green-800 m-0">
-                  This guarantee is designed to protect students who put in the work and follow the program as designed. By enrolling in TIA and checking the acknowledgment box at checkout, the student agrees to the following terms.
+                  This Guarantee applies exclusively to students preparing for the Texas Professional Inspector or Real Estate Inspector licensing exams. If a student meets all requirements outlined in this document and does not pass the licensing exam on their first attempt, TIA will refund the full amount of tuition paid.
                 </p>
               </div>
 
-              {/* Section 1 */}
+              {/* Section 2 - Eligibility Requirements */}
               <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">
-                1. Eligibility Requirements
+                2. Eligibility Requirements
               </h2>
               <p className="text-gray-600 mb-4">
-                To qualify for the money-back guarantee, the student must:
+                To qualify for the Guarantee, a student must satisfy <strong>all</strong> of the following conditions:
               </p>
+
+              {/* 2.1 Enrollment */}
+              <h3 className="text-xl font-semibold text-gray-900 mt-6 mb-3">
+                2.1 Enrollment
+              </h3>
               <ul className="space-y-3 mb-6">
                 <li className="flex items-start">
                   <CheckCircle className="mr-3 h-5 w-5 text-green-500 flex-shrink-0 mt-1" />
                   <span className="text-gray-700">
-                    Complete all qualifying education courses through The Inspection Academy, including all required quizzes, activities, and assessments.
+                    Student must be enrolled in a TIA Texas pre-licensing program.
                   </span>
                 </li>
                 <li className="flex items-start">
                   <CheckCircle className="mr-3 h-5 w-5 text-green-500 flex-shrink-0 mt-1" />
                   <span className="text-gray-700">
-                    Pass a minimum of five (5) full-length sample exams (225 questions each) on the Bulletproof Test Prep app with a score of 75% or higher.
+                    Both paid-in-full and subscription students are eligible.
                   </span>
                 </li>
               </ul>
-              <p className="text-gray-600 bg-gray-50 p-4 rounded-lg">
-                These requirements ensure that the student has fully engaged with the curriculum and completed the structured exam-prep process.
-              </p>
 
-              {/* Section 2 */}
-              <h2 className="text-2xl font-bold text-gray-900 mt-10 mb-4">
-                2. Exam Attempt Requirements
-              </h2>
-              <p className="text-gray-600 mb-4">
-                To remain eligible for the money-back guarantee:
-              </p>
+              {/* 2.2 Course Completion */}
+              <h3 className="text-xl font-semibold text-gray-900 mt-6 mb-3">
+                2.2 Course Completion
+              </h3>
               <ul className="space-y-3 mb-6">
                 <li className="flex items-start">
                   <CheckCircle className="mr-3 h-5 w-5 text-green-500 flex-shrink-0 mt-1" />
                   <span className="text-gray-700">
-                    The student must take the official state licensing exam <strong>within 30 days</strong> of passing their fifth required sample exam on the Bulletproof Test Prep app. This ensures the exam is taken while the student&apos;s preparation is fresh and aligned with the structured study sequence.
-                  </span>
-                </li>
-                <li className="flex items-start">
-                  <CheckCircle className="mr-3 h-5 w-5 text-green-500 flex-shrink-0 mt-1" />
-                  <span className="text-gray-700">
-                    The student must provide official documentation of exam failure, including the score report and exam date.
-                  </span>
-                </li>
-                <li className="flex items-start">
-                  <CheckCircle className="mr-3 h-5 w-5 text-green-500 flex-shrink-0 mt-1" />
-                  <span className="text-gray-700">
-                    The refund request must be submitted <strong>within 30 days</strong> of receiving the exam results.
+                    Student must complete <strong>all required TIA courses</strong> and obtain <strong>all official TIA completion certificates</strong>.
                   </span>
                 </li>
               </ul>
 
-              {/* Section 3 */}
-              <h2 className="text-2xl font-bold text-gray-900 mt-10 mb-4">
-                3. Refund Amount
-              </h2>
+              {/* 2.3 Bulletproof Test Prep Requirements */}
+              <h3 className="text-xl font-semibold text-gray-900 mt-6 mb-3">
+                2.3 Bulletproof Test Prep Requirements
+              </h3>
               <p className="text-gray-600 mb-4">
-                If the student meets all eligibility requirements and does not pass the licensing exam on their first attempt:
-              </p>
-              <div className="grid md:grid-cols-2 gap-4 mb-6">
-                <div className="bg-green-50 border border-green-200 rounded-xl p-6">
-                  <h3 className="font-semibold text-gray-900 mb-2">Paid-in-Full Students</h3>
-                  <p className="text-gray-700 m-0">
-                    TIA will refund <strong>100% of tuition paid</strong>.
-                  </p>
-                </div>
-                <div className="bg-green-50 border border-green-200 rounded-xl p-6">
-                  <h3 className="font-semibold text-gray-900 mb-2">Subscription Students</h3>
-                  <p className="text-gray-700 m-0">
-                    TIA will refund <strong>all payments made to date</strong>, and all remaining future payments will be forgiven.
-                  </p>
-                </div>
-              </div>
-              <ul className="space-y-2 text-gray-600">
-                <li>• Refunds are issued to the original payment method within 30 days of approval.</li>
-                <li>• <strong>No exclusions apply.</strong> TIA refunds every dollar the student paid to TIA for tuition.</li>
-              </ul>
-
-              {/* Section 4 */}
-              <h2 className="text-2xl font-bold text-gray-900 mt-10 mb-4">
-                4. Student Responsibilities
-              </h2>
-              <p className="text-gray-600 mb-4">
-                The student acknowledges and agrees that:
-              </p>
-              <ul className="space-y-3 mb-6">
-                <li className="flex items-start">
-                  <span className="mr-3 text-gray-400">•</span>
-                  <span className="text-gray-700">
-                    TIA&apos;s course structure requires completion of all of the activities included in each of the required courses.
-                  </span>
-                </li>
-                <li className="flex items-start">
-                  <span className="mr-3 text-gray-400">•</span>
-                  <span className="text-gray-700">
-                    Bulletproof Test Prep&apos;s adaptive system requires completion of targeted study recommendations before each subsequent sample exam.
-                  </span>
-                </li>
-                <li className="flex items-start">
-                  <span className="mr-3 text-gray-400">•</span>
-                  <span className="text-gray-700">
-                    The student cannot skip required steps or bypass the structured learning sequence.
-                  </span>
-                </li>
-                <li className="flex items-start">
-                  <span className="mr-3 text-gray-400">•</span>
-                  <span className="text-gray-700">
-                    The student must follow all instructions, policies, and academic integrity standards.
-                  </span>
-                </li>
-              </ul>
-              <div className="bg-amber-50 border border-amber-200 rounded-lg p-4">
-                <p className="text-amber-800 m-0 font-medium">
-                  Failure to follow the required sequence or any attempt to circumvent the system voids eligibility.
-                </p>
-              </div>
-
-              {/* Section 5 */}
-              <h2 className="text-2xl font-bold text-gray-900 mt-10 mb-4">
-                5. Exclusions
-              </h2>
-              <p className="text-gray-600 mb-4">
-                The guarantee is void if:
-              </p>
-              <ul className="space-y-2 mb-6">
-                <li className="flex items-start">
-                  <span className="mr-3 text-red-500">✕</span>
-                  <span className="text-gray-700">
-                    The student engages in misconduct, cheating, or violation of exam rules.
-                  </span>
-                </li>
-                <li className="flex items-start">
-                  <span className="mr-3 text-red-500">✕</span>
-                  <span className="text-gray-700">
-                    The student provides false, incomplete, or unverifiable documentation.
-                  </span>
-                </li>
-                <li className="flex items-start">
-                  <span className="mr-3 text-red-500">✕</span>
-                  <span className="text-gray-700">
-                    The student fails to submit the refund request within the 30-day window.
-                  </span>
-                </li>
-                <li className="flex items-start">
-                  <span className="mr-3 text-red-500">✕</span>
-                  <span className="text-gray-700">
-                    The student does not complete the required TIA coursework and BTP sample exams as designed.
-                  </span>
-                </li>
-              </ul>
-
-              {/* Section 6 */}
-              <h2 className="text-2xl font-bold text-gray-900 mt-10 mb-4">
-                6. Refund Request Procedure
-              </h2>
-              <p className="text-gray-600 mb-4">
-                To request a refund, the student must:
+                Student must complete the following steps using the Bulletproof Test Prep (&quot;BTP&quot;) app:
               </p>
               <ol className="space-y-3 mb-6 list-decimal list-inside">
                 <li className="text-gray-700">
-                  Submit a written request to TIA within 30 days of receiving exam results.
+                  Begin preparation by taking a <strong>full-length sample exam</strong>.
                 </li>
                 <li className="text-gray-700">
-                  Include the official exam failure documentation.
+                  Follow the <strong>AI-generated study plan</strong> assigned after each exam.
                 </li>
                 <li className="text-gray-700">
-                  Confirm that all eligibility requirements were completed.
+                  Complete all required study modules before taking the next sample exam.
+                </li>
+                <li className="text-gray-700">
+                  Pass <strong>five (5) full-length sample exams</strong> with a score of <strong>75% or higher</strong>.
+                </li>
+                <li className="text-gray-700">
+                  Take the official Texas licensing exam <strong>within 30 days</strong> of completing the fifth qualifying sample exam.
                 </li>
               </ol>
-              <p className="text-gray-600">
-                TIA will review the request and issue the refund within 30 days if approved.
+              <div className="bg-amber-50 border border-amber-200 rounded-lg p-4 mb-8">
+                <p className="text-amber-800 m-0 font-medium">
+                  Failure to follow the assigned study plan or skipping any required steps voids eligibility.
+                </p>
+              </div>
+
+              {/* Section 3 - Refund Conditions */}
+              <h2 className="text-2xl font-bold text-gray-900 mt-10 mb-4">
+                3. Refund Conditions
+              </h2>
+              <p className="text-gray-600 mb-4">
+                If the student meets all eligibility requirements and fails the official Texas home inspector licensing exam on their first attempt, TIA will refund:
+              </p>
+              <div className="bg-green-50 border border-green-200 rounded-xl p-6 mb-6">
+                <p className="text-gray-900 font-semibold m-0">
+                  100% of tuition paid to The Inspection Academy, including all subscription payments made to date.
+                </p>
+              </div>
+              <p className="text-gray-600 mb-4">
+                The refund <strong>does not</strong> include:
+              </p>
+              <ul className="space-y-2 mb-6">
+                <li className="flex items-start">
+                  <span className="mr-3 text-gray-400">•</span>
+                  <span className="text-gray-700">State exam fees</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="mr-3 text-gray-400">•</span>
+                  <span className="text-gray-700">Travel or lodging expenses</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="mr-3 text-gray-400">•</span>
+                  <span className="text-gray-700">Tools, equipment, or supplies</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="mr-3 text-gray-400">•</span>
+                  <span className="text-gray-700">Third-party materials</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="mr-3 text-gray-400">•</span>
+                  <span className="text-gray-700">Any future subscription payments (these are automatically forgiven)</span>
+                </li>
+              </ul>
+
+              {/* Section 4 - Refund Request Procedure */}
+              <h2 className="text-2xl font-bold text-gray-900 mt-10 mb-4">
+                4. Refund Request Procedure
+              </h2>
+              <p className="text-gray-600 mb-4">
+                To request a refund under this Guarantee, the student must:
+              </p>
+              <ol className="space-y-3 mb-6 list-decimal list-inside">
+                <li className="text-gray-700">
+                  Submit a refund request <strong>within 30 days</strong> of failing the exam.
+                </li>
+                <li className="text-gray-700">
+                  Provide the following documentation:
+                  <ul className="mt-2 ml-6 space-y-1">
+                    <li className="flex items-start">
+                      <span className="mr-2 text-gray-400">○</span>
+                      <span>The official <strong>score report</strong> from the testing provider.</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="mr-2 text-gray-400">○</span>
+                      <span><strong>Proof of exam date</strong>.</span>
+                    </li>
+                  </ul>
+                </li>
+              </ol>
+              <div className="bg-gray-100 border border-gray-300 rounded-lg p-4 mb-8">
+                <p className="text-gray-700 m-0">
+                  Requests submitted after the 30-day window or without complete documentation will not be eligible.
+                </p>
+              </div>
+
+              {/* Section 5 - Refund Processing */}
+              <h2 className="text-2xl font-bold text-gray-900 mt-10 mb-4">
+                5. Refund Processing
+              </h2>
+              <p className="text-gray-600 mb-8">
+                TIA will review the request and, if approved, issue the refund within <strong>30 days</strong> using the original payment method.
               </p>
 
-              {/* Section 7 */}
+              {/* Section 6 - Limitations and Exclusions */}
               <h2 className="text-2xl font-bold text-gray-900 mt-10 mb-4">
-                7. Agreement to Terms
+                6. Limitations and Exclusions
               </h2>
-              <div className="bg-gray-100 border border-gray-300 rounded-xl p-6">
+              <p className="text-gray-600 mb-4">
+                The Guarantee is void under any of the following circumstances:
+              </p>
+              <ul className="space-y-3 mb-8">
+                <li className="flex items-start">
+                  <AlertCircle className="mr-3 h-5 w-5 text-red-500 flex-shrink-0 mt-1" />
+                  <span className="text-gray-700">
+                    The student violates exam rules, engages in misconduct, or provides false information.
+                  </span>
+                </li>
+                <li className="flex items-start">
+                  <AlertCircle className="mr-3 h-5 w-5 text-red-500 flex-shrink-0 mt-1" />
+                  <span className="text-gray-700">
+                    The student fails to follow the BTP study plan as assigned.
+                  </span>
+                </li>
+                <li className="flex items-start">
+                  <AlertCircle className="mr-3 h-5 w-5 text-red-500 flex-shrink-0 mt-1" />
+                  <span className="text-gray-700">
+                    The student takes the licensing exam more than 30 days after completing the fifth qualifying sample exam.
+                  </span>
+                </li>
+                <li className="flex items-start">
+                  <AlertCircle className="mr-3 h-5 w-5 text-red-500 flex-shrink-0 mt-1" />
+                  <span className="text-gray-700">
+                    The student fails to submit a refund request within the required 30-day window.
+                  </span>
+                </li>
+                <li className="flex items-start">
+                  <AlertCircle className="mr-3 h-5 w-5 text-red-500 flex-shrink-0 mt-1" />
+                  <span className="text-gray-700">
+                    The student submits altered, incomplete, or fraudulent documentation.
+                  </span>
+                </li>
+              </ul>
+
+              {/* Section 7 - Acceptance of Terms */}
+              <h2 className="text-2xl font-bold text-gray-900 mt-10 mb-4">
+                7. Acceptance of Terms
+              </h2>
+              <div className="bg-gray-100 border border-gray-300 rounded-xl p-6 mb-8">
                 <p className="text-gray-700 m-0">
-                  By enrolling in The Inspection Academy and checking the acknowledgment box at checkout, the student confirms that they have read, understood, and agreed to these Money-Back Guarantee Terms & Conditions.
+                  By enrolling in a TIA Texas pre-licensing program, the student acknowledges and agrees to these Terms & Conditions. TIA may require students to confirm their understanding of these terms and conditions by checking a box at checkout or during enrollment.
                 </p>
+              </div>
+
+              {/* Section 8 - Amendments */}
+              <h2 className="text-2xl font-bold text-gray-900 mt-10 mb-4">
+                8. Amendments
+              </h2>
+              <p className="text-gray-600 mb-8">
+                TIA reserves the right to update or modify these Terms & Conditions at any time. Any changes will apply to future enrollments and will not affect students already enrolled under previous terms.
+              </p>
+
+              {/* Footer */}
+              <div className="border-t border-gray-200 pt-8 mt-12 text-center text-gray-500 text-sm">
+                <p className="mb-2">The Inspection Academy • TREC-approved Qualifying Education Provider</p>
+                <p className="mb-2">TREC License #701080</p>
+                <p className="mb-2">TheInspectionAcademy.com</p>
+                <p>© 2026 The Inspection Academy. All Rights Reserved.</p>
               </div>
             </div>
 

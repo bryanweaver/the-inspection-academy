@@ -265,7 +265,7 @@ export const sixReasons: Reason[] = [
     title: 'Risk-Free Guarantee',
     subtitle: 'We Put Our Money Where Our Mouth Is',
     description:
-      "Pass your licensing exam on your first attempt — or we refund every dollar you paid. Complete our training, pass five sample exams on Bulletproof Test Prep, take the state exam, and if you don't pass on your first try, we give you your money back. No fine print. No games. Just a guarantee backed by real results.",
+      "Pass your licensing exam on your first attempt — or we refund every dollar you paid. Complete our training, pass five sample exams on Bulletproof Test Prep, take the state exam, and if you don't pass on your first try, we give you your money back. No games. Just a guarantee backed by real results.",
     stats: {
       tia: 'Pass-or-refund guarantee',
       ahit: 'No guarantee offered',
@@ -304,7 +304,7 @@ export const guaranteeContent = {
   title: "We're So Confident You'll Pass, We Guarantee It",
   mainText: 'Pass your licensing exam on your first attempt — or we refund every dollar you paid.',
   details: "Complete our training, pass five sample exams on Bulletproof Test Prep, take the state exam, and if you don't pass on your first try, we give you your money back.",
-  emphasis: 'No fine print. No games. Just a guarantee backed by real results.',
+  emphasis: 'No games. Just a guarantee backed by real results.',
   comparison: "Why can we offer this when AHIT doesn't? Because our system works. 67% of our students pass on the first try—#2 in Texas compared to AHIT's 51.45%.",
   ctaPrimary: 'Start Your Training',
   ctaSecondary: 'See Full Terms',

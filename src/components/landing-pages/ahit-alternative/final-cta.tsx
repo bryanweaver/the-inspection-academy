@@ -35,15 +35,25 @@ export function FinalCTA() {
 
           {/* Benefits */}
           <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 mb-8">
-            {finalCTAContent.benefits.map((benefit, index) => (
-              <div
-                key={index}
-                className="flex items-center text-white/90 text-sm"
-              >
-                <Check className="mr-2 h-4 w-4 text-green-400" />
-                {benefit}
-              </div>
-            ))}
+            {finalCTAContent.benefits.map((benefit, index) => {
+              const isGuarantee = benefit.toLowerCase().includes('guarantee');
+              return (
+                <div
+                  key={index}
+                  className="flex items-center text-white/90 text-sm"
+                >
+                  <Check className="mr-2 h-4 w-4 text-green-400" />
+                  {isGuarantee ? (
+                    <>
+                      <Link href="/money-back-guarantee" className="underline decoration-dotted decoration-white/40 underline-offset-2 hover:decoration-white/80">{benefit}</Link>
+                      <Link href="/money-back-guarantee" className="text-green-400 hover:text-green-300 align-super text-xs ml-0.5">*</Link>
+                    </>
+                  ) : (
+                    benefit
+                  )}
+                </div>
+              );
+            })}
           </div>
 
           {/* CTAs */}
