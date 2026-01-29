@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { useState } from 'react';
 import { Menu, X, Phone } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -23,10 +24,17 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60">
       <Container>
-        <div className="flex h-16 items-center justify-between">
+        <div className="flex h-20 items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-2">
-            <span className="text-xl font-bold text-primary">The Inspection Academy</span>
+          <Link href="/" className="flex items-center">
+            <Image
+              src="/logo-blue.png"
+              alt="The Inspection Academy"
+              width={400}
+              height={80}
+              className="h-20 w-auto"
+              priority
+            />
           </Link>
 
           {/* Desktop Navigation */}
