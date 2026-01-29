@@ -11,3 +11,4 @@ export { TexasKeywordsSection } from './texas-keywords-section';
 export { StickyCTA } from './sticky-cta';
 export { ExitIntentPopup } from './exit-intent-popup';
 export { ProgressIndicator } from './progress-indicator';
+export { LeadCaptureForm } from './lead-capture-form';

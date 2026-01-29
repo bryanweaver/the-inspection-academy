@@ -14,6 +14,7 @@ import {
   StickyCTA,
   ExitIntentPopup,
   ProgressIndicator,
+  LeadCaptureForm,
 } from '@/components/landing-pages/ahit-alternative';
 import { pageMetadata, ahitFAQs } from '@/data/landing-pages/ahit-alternative';
 
@@ -83,6 +84,7 @@ export default function AHITAlternativePage() {
       <FieldExperienceSection />
       <PassRateStats />
       <CostOfFailureSection />
+      <LeadCaptureForm />
       <SixReasons />
       <GuaranteeSection />
       <TexasKeywordsSection />
