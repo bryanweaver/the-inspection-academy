@@ -30,7 +30,9 @@ export default function TermsPage() {
               <Shield className="h-8 w-8 text-green-600" />
             </div>
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-              Money Back Guarantee — Terms & Conditions
+              Money Back Guarantee
+              <br />
+              <span className="text-3xl md:text-4xl">Terms & Conditions</span>
             </h1>
             <p className="text-sm text-gray-500 mb-4">
               Effective Date: February 1st, 2026
