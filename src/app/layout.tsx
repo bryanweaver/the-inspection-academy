@@ -24,6 +24,17 @@ export const metadata: Metadata = {
   title: "The Inspection Academy | Texas Home Inspector Training",
   description: "Pass your Texas home inspector exam on the first try. TREC-approved courses with proven Adult Learning Theory. Get licensed faster with our comprehensive training program.",
   keywords: ["Texas home inspector training", "TREC approved courses", "home inspector licensing", "Texas inspector exam prep"],
+  icons: {
+    icon: [
+      { url: '/favicon.ico' },
+      { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
+      { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+    ],
+    apple: [
+      { url: '/apple-icon.png' },
+    ],
+  },
+  manifest: '/site.webmanifest',
   openGraph: {
     title: "The Inspection Academy | Texas Home Inspector Training",
     description: "Pass your Texas home inspector exam on the first try. TREC-approved courses with proven Adult Learning Theory.",

@@ -4,6 +4,12 @@ import { useEffect, useState } from 'react';
 import { X, FileText } from 'lucide-react';
 import { trackEvent } from '@/lib/analytics';
 
+declare global {
+  interface Window {
+    ml?: (command: string, ...args: unknown[]) => void;
+  }
+}
+
 const MAILERLITE_FORM_ID = '89Auv2';
 
 export function ExitIntentPopup() {
@@ -37,6 +43,13 @@ export function ExitIntentPopup() {
       document.removeEventListener('mouseleave', handleMouseLeave);
     };
   }, [hasShown]);
+
+  // Re-initialize MailerLite when popup opens to render the form
+  useEffect(() => {
+    if (isOpen && window.ml) {
+      window.ml('init');
+    }
+  }, [isOpen]);
 
   const handleClose = () => {
     setIsOpen(false);
