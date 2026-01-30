@@ -12,7 +12,7 @@ export const SITE_CONFIG = {
   },
 
   promo: {
-    code: 'tia2026',
+    code: 'TIA2026',
     discount: '15%',
     limit: 15,
     description: 'First 15 students in 2026',
