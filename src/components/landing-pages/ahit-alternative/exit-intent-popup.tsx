@@ -4,12 +4,6 @@ import { useEffect, useState } from 'react';
 import { X, FileText } from 'lucide-react';
 import { trackEvent } from '@/lib/analytics';
 
-declare global {
-  interface Window {
-    ml?: (command: string, ...args: unknown[]) => void;
-  }
-}
-
 const MAILERLITE_FORM_ID = '89Auv2';
 
 export function ExitIntentPopup() {
@@ -44,21 +38,17 @@ export function ExitIntentPopup() {
     };
   }, [hasShown]);
 
-  // Re-initialize MailerLite when popup opens to render the form
-  useEffect(() => {
-    if (isOpen && window.ml) {
-      window.ml('init');
-    }
-  }, [isOpen]);
-
   const handleClose = () => {
     setIsOpen(false);
   };
 
-  if (!isOpen) return null;
-
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+    <div
+      className={`fixed inset-0 z-50 flex items-center justify-center p-4 transition-opacity duration-300 ${
+        isOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
+      }`}
+      aria-hidden={!isOpen}
+    >
       {/* Backdrop */}
       <div
         className="absolute inset-0 bg-black/50 backdrop-blur-sm"
