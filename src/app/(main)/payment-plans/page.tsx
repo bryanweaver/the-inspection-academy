@@ -7,17 +7,17 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/
 import { SITE_CONFIG } from '@/lib/constants';
 
 export const metadata = {
-  title: 'Subscription Payment Plans | The Inspection Academy',
-  description: '0% interest subscription payment plans for Texas home inspector training. 12, 18, and 24 month terms available.',
+  title: 'Payment Plans | The Inspection Academy',
+  description: '0% interest payment plans for Texas home inspector training. 12, 18, and 24 month terms available.',
   openGraph: {
     title: '0% Interest Payment Plans | The Inspection Academy',
     description: 'Affordable payment plans for Texas home inspector training. No credit check. 12, 18, or 24 month terms.',
-    url: 'https://theinspectionacademy.com/subscriptions',
+    url: 'https://theinspectionacademy.com/payment-plans',
     siteName: 'The Inspection Academy',
     images: [{ url: '/og-image.png', width: 1200, height: 630 }],
   },
   alternates: {
-    canonical: 'https://theinspectionacademy.com/subscriptions',
+    canonical: 'https://theinspectionacademy.com/payment-plans',
   },
 };
 
@@ -46,7 +46,7 @@ const benefits = [
   {
     icon: CreditCard,
     title: 'No Interest',
-    description: 'Our subscription plans charge 0% interest. You only pay a modest fee to cover transaction costs.',
+    description: 'Our payment plans charge 0% interest. You only pay a modest fee to cover transaction costs.',
   },
   {
     icon: Calendar,
@@ -62,8 +62,8 @@ const benefits = [
 
 const faqs = [
   {
-    question: 'How do the subscription plans work?',
-    answer: 'Instead of paying for your enrollment all up front, our subscriptions allow you to pay smaller monthly payments. After a small down payment and your first month\'s payment, you gain full access to your chosen courses.',
+    question: 'How do the payment plans work?',
+    answer: 'Instead of paying for your enrollment all up front, our payment plans allow you to pay smaller monthly payments. After a small down payment and your first month\'s payment, you gain full access to your chosen courses.',
   },
   {
     question: 'Why are down payments necessary?',
@@ -78,8 +78,8 @@ const faqs = [
     answer: 'Students must use a credit card, debit card, Amazon Pay, or bank draft for automatic payments. The first payment includes the down payment and the first monthly installment.',
   },
   {
-    question: 'Are there other requirements to start a subscription?',
-    answer: 'Yes, before enrolling in a subscription plan, you must schedule an online meeting with TIA. This meeting ensures transparency about all plan options, creates a recorded verbal contract for protection, and builds trust between both parties.',
+    question: 'Are there other requirements to start a payment plan?',
+    answer: 'Yes, before enrolling in a payment plan, you must schedule an online meeting with TIA. This meeting ensures transparency about all plan options, creates a recorded verbal contract for protection, and builds trust between both parties.',
   },
 ];
 
@@ -91,13 +91,13 @@ export default function SubscriptionsPage() {
         <Container>
           <div className="max-w-3xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-              Subscription Payment Plans
+              Payment Plans
             </h1>
             <p className="text-xl text-gray-600 mb-2">
               Starting a new career is exciting, but paying for education upfront can be stressful.
             </p>
             <p className="text-xl text-gray-600">
-              Our <span className="font-semibold text-primary">0% interest</span> subscription plans make home inspector training accessible.
+              Our <span className="font-semibold text-primary">0% interest</span> payment plans make home inspector training accessible.
             </p>
           </div>
         </Container>
@@ -262,10 +262,10 @@ export default function SubscriptionsPage() {
         <Container>
           <div className="max-w-2xl mx-auto text-center">
             <h2 className="text-3xl font-bold text-white mb-4">
-              Ready to Start Your Subscription?
+              Ready to Start Your Payment Plan?
             </h2>
             <p className="text-lg text-white/80 mb-6">
-              Schedule a meeting to discuss the best subscription option for your future.
+              Schedule a meeting to discuss the best payment plan option for your future.
             </p>
             <Button size="lg" variant="secondary" asChild>
               <a href={SITE_CONFIG.links.scheduleCall} target="_blank" rel="noopener noreferrer">

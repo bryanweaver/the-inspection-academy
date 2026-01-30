@@ -12,7 +12,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/courses/texas-professional-inspector',
     '/courses/texas-real-estate-inspector',
     '/pricing',
-    '/subscriptions',
+    '/payment-plans',
     '/become-an-inspector',
     '/how-it-works',
     '/faq',

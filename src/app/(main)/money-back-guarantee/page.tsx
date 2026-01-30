@@ -78,7 +78,7 @@ export default function TermsPage() {
                 <li className="flex items-start">
                   <CheckCircle className="mr-3 h-5 w-5 text-green-500 flex-shrink-0 mt-1" />
                   <span className="text-gray-700">
-                    Both paid-in-full and subscription students are eligible.
+                    Both paid-in-full and payment plan students are eligible.
                   </span>
                 </li>
               </ul>
@@ -135,7 +135,7 @@ export default function TermsPage() {
               </p>
               <div className="bg-green-50 border border-green-200 rounded-xl p-6 mb-6">
                 <p className="text-gray-900 font-semibold m-0">
-                  100% of tuition paid to The Inspection Academy, including all subscription payments made to date.
+                  100% of tuition paid to The Inspection Academy, including all payment plan payments made to date.
                 </p>
               </div>
               <p className="text-gray-600 mb-4">
@@ -160,7 +160,7 @@ export default function TermsPage() {
                 </li>
                 <li className="flex items-start">
                   <span className="mr-3 text-gray-400">•</span>
-                  <span className="text-gray-700">Any future subscription payments (these are automatically forgiven)</span>
+                  <span className="text-gray-700">Any future payment plan payments (these are automatically forgiven)</span>
                 </li>
               </ul>
 

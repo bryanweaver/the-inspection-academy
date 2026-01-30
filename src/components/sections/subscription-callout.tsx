@@ -9,8 +9,8 @@ import { trackEvent } from '@/lib/analytics';
 export function SubscriptionCallout() {
   const handleSubscriptionClick = () => {
     trackEvent('cta_click', {
-      button_text: 'View Subscription Options',
-      button_location: 'subscription_callout',
+      button_text: 'View Payment Plan Options',
+      button_location: 'payment_plan_callout',
       button_variant: 'secondary',
     });
   };
@@ -24,7 +24,7 @@ export function SubscriptionCallout() {
           </div>
 
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-2">
-            We&apos;re Proud to Introduce Our New &quot;Subscription&quot; Payment Plans!
+            We&apos;re Proud to Introduce Our New Payment Plans!
           </h2>
 
           <div className="flex flex-wrap justify-center gap-4 my-6">
@@ -41,16 +41,16 @@ export function SubscriptionCallout() {
 
           <div className="bg-amber-100 border border-amber-200 rounded-xl p-6 mb-8">
             <h3 className="text-2xl font-bold text-amber-800 mb-2">
-              Our Subscriptions Are 0% Interest!
+              Our Payment Plans Are 0% Interest!
             </h3>
             <p className="text-amber-700">
-              No credit check required. Pay monthly and cancel anytime.
+              No credit check required. Affordable monthly payments.
             </p>
           </div>
 
           <Button size="lg" variant="outline" asChild onClick={handleSubscriptionClick}>
-            <Link href="/subscriptions">
-              View Subscription Options
+            <Link href="/payment-plans">
+              View Payment Plan Options
               <ChevronRight className="ml-2 h-5 w-5" />
             </Link>
           </Button>

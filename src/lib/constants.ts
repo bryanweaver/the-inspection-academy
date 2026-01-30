@@ -28,7 +28,7 @@ export const SITE_CONFIG = {
 export const NAV_ITEMS = [
   { label: 'Training', href: '/courses' },
   { label: 'Become an Inspector', href: '/become-an-inspector' },
-  { label: 'Subscriptions', href: '/subscriptions' },
+  { label: 'Payment Plans', href: '/payment-plans' },
   { label: 'Blog', href: '/blog' },
 ] as const;
 
@@ -36,7 +36,7 @@ export const FOOTER_LINKS = {
   quickLinks: [
     { label: 'Training', href: '/courses' },
     { label: 'Become an Inspector', href: '/become-an-inspector' },
-    { label: 'Subscriptions', href: '/subscriptions' },
+    { label: 'Payment Plans', href: '/payment-plans' },
     { label: 'Pricing', href: '/pricing' },
   ],
   resources: [
