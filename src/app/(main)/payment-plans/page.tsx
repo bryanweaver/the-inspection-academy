@@ -21,23 +21,23 @@ export const metadata = {
   },
 };
 
-const subscriptionPlans = [
+const paymentPlans = [
   {
     term: '12 Months',
-    professionalMonthly: 208,
-    realEstateMonthly: 150,
+    professionalMonthly: 206,
+    realEstateMonthly: 145,
     downPayment: 150,
   },
   {
     term: '18 Months',
-    professionalMonthly: 139,
-    realEstateMonthly: 100,
+    professionalMonthly: 132,
+    realEstateMonthly: 91,
     downPayment: 250,
   },
   {
     term: '24 Months',
-    professionalMonthly: 104,
-    realEstateMonthly: 75,
+    professionalMonthly: 95,
+    realEstateMonthly: null,
     downPayment: 350,
   },
 ];
@@ -145,7 +145,7 @@ export default function SubscriptionsPage() {
                   </tr>
                 </thead>
                 <tbody>
-                  {subscriptionPlans.map((plan) => (
+                  {paymentPlans.map((plan) => (
                     <tr key={plan.term} className="hover:bg-gray-50">
                       <td className="p-4 border font-medium">{plan.term}</td>
                       <td className="p-4 border text-center">
@@ -156,8 +156,14 @@ export default function SubscriptionsPage() {
                         <span className="text-gray-500">/mo</span>
                       </td>
                       <td className="p-4 border text-center">
-                        <span className="text-2xl font-bold text-gray-900">${plan.realEstateMonthly}</span>
-                        <span className="text-gray-500">/mo</span>
+                        {plan.realEstateMonthly ? (
+                          <>
+                            <span className="text-2xl font-bold text-gray-900">${plan.realEstateMonthly}</span>
+                            <span className="text-gray-500">/mo</span>
+                          </>
+                        ) : (
+                          <span className="text-2xl font-bold text-gray-400">&mdash;</span>
+                        )}
                       </td>
                     </tr>
                   ))}
