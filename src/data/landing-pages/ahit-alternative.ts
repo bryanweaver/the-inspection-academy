@@ -192,7 +192,6 @@ export const fieldExperienceContent = {
       "Real relationships - Build connections with working inspectors in your market",
     ],
   },
-  costComparison: "Cost comparison: While AHIT builds practicum cost into their $2,500 package, most TIA students complete field experience for free or $50-300 total—less than the $200 in textbooks AHIT charges separately.",
   networkNote: "Plus, TIA can connect you with our network of Texas inspectors if you need referrals.",
 };
 

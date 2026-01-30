@@ -1,6 +1,6 @@
 'use client';
 
-import { Check, X, Users, User, Clock, Handshake } from 'lucide-react';
+import { Check, X, Users, User, Handshake } from 'lucide-react';
 import { Section, Container } from '@/components/layout';
 import { Card, CardContent } from '@/components/ui/card';
 import { fieldExperienceContent } from '@/data/landing-pages/ahit-alternative';
@@ -72,17 +72,6 @@ export function FieldExperienceSection() {
                 </ul>
               </CardContent>
             </Card>
-          </div>
-
-          {/* Cost Comparison */}
-          <div className="bg-primary/5 border border-primary/20 rounded-lg p-6 mb-4">
-            <div className="flex items-start gap-3">
-              <Clock className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-              <p className="text-gray-700">
-                <span className="font-semibold">Cost comparison:</span>{' '}
-                {fieldExperienceContent.costComparison.replace('Cost comparison: ', '')}
-              </p>
-            </div>
           </div>
 
           {/* Network Note */}
