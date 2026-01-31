@@ -328,16 +328,16 @@ export const texasKeywordsContent = {
 // Cost of failure section
 export const costOfFailureContent = {
   title: 'Why Pass Rates Matter More Than Price',
-  description: "At comparable prices, pass rate is what separates the schools. With AHIT's 51.45% pass rate, you have coin-flip odds. If you fail your first attempt:",
+  description: "Failing the exam one or more times is the true issue.",
   costs: [
-    '$200 retake fee',
-    '2-3 months additional study time',
-    '3-6 months delayed career launch',
-    '$3,000-$8,000/month in lost inspector income',
+    '$200 for every failed exam attempt',
+    '$300-$800 per class in TREC-required retake courses after a 3rd failed attempt',
+    '$50-$200 on additional study aids like practice tests and flashcards',
+    'Postponing your inspection career by 3-6 months',
   ],
-  totalCost: 'Total cost of one failure: $5,000-$15,000+',
+  totalCost: "With AHIT's 51.45% pass rate, you have coin-flip odds of facing these costs.",
   conclusion:
-    "At comparable price points, TIA's 67% pass rate and included books make it the smarter choice over AHIT's 51% pass rate.",
+    "At comparable price points, TIA's 67% pass rate significantly reduces your risk of expensive retakes.",
 };
 
 // FAQ section - UPDATED with field experience FAQ
