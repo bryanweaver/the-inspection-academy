@@ -5,11 +5,10 @@ import { Container, Section } from '@/components/layout';
 import { SITE_CONFIG } from '@/lib/constants';
 
 const costs = [
-  { amount: '$2,000-$4,000', description: 'What you paid for inadequate training' },
-  { amount: '$200', description: 'First exam failure' },
-  { amount: '$200', description: 'Second exam attempt (if you\'re "lucky" enough to pass on try #2)' },
-  { amount: '$100-$300', description: 'Scrambling for flashcards, practice exams, and other test prep products to fill the gaps' },
-  { amount: '$3,000-$8,000+', description: 'Lost income PER MONTH (every month you\'re NOT licensed, you\'re NOT earning)', highlight: true },
+  { amount: '$200', description: 'For every failed exam attempt' },
+  { amount: '$300-$800', description: 'Per class in TREC-required retake courses after a 3rd failed attempt' },
+  { amount: '$50-$200', description: 'On additional study aids like practice tests and flashcards' },
+  { amount: '3-6 months', description: 'Postponing your inspection career', highlight: true },
 ];
 
 export function CostOfFailure() {
@@ -53,9 +52,9 @@ export function CostOfFailure() {
             </ul>
 
             <div className="bg-amber-50 border border-amber-200 rounded-lg p-4">
-              <h4 className="font-semibold text-gray-900 mb-2">Let&apos;s be conservative:</h4>
+              <h4 className="font-semibold text-gray-900 mb-2">The real cost of choosing the wrong school:</h4>
               <p className="text-gray-700">
-                If you fail twice before passing, that&apos;s <strong>$600 in exam fees</strong>, another <strong>$200-400 in test prep materials</strong>, and you&apos;re <strong>2-3 months behind</strong> on launching your business.
+                If you fail twice before passing, that&apos;s <strong>$400+ in exam fees</strong>, another <strong>$50-200 in study aids</strong>, and you&apos;re <strong>3-6 months behind</strong> on launching your career. Fail three times? Add <strong>$300-800 per required retake course</strong>.
               </p>
             </div>
           </div>
