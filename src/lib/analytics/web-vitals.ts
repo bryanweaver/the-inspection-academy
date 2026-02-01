@@ -3,7 +3,8 @@ import { pushToDataLayer } from './gtm';
 
 /**
  * Reports Core Web Vitals metrics to GTM dataLayer
- * Metrics tracked: CLS, LCP, FID, INP, TTFB, FCP
+ * Metrics tracked: CLS, LCP, INP, TTFB, FCP
+ * Note: FID is deprecated in web-vitals v4+, replaced by INP
  */
 function reportWebVital(metric: Metric) {
   pushToDataLayer({
@@ -24,11 +25,10 @@ export async function reportWebVitals() {
   if (typeof window === 'undefined') return;
 
   try {
-    const { onCLS, onLCP, onFID, onINP, onTTFB, onFCP } = await import('web-vitals');
+    const { onCLS, onLCP, onINP, onTTFB, onFCP } = await import('web-vitals');
 
     onCLS(reportWebVital);
     onLCP(reportWebVital);
-    onFID(reportWebVital);
     onINP(reportWebVital);
     onTTFB(reportWebVital);
     onFCP(reportWebVital);
