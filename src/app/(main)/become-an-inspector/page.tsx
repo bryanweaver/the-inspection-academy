@@ -6,6 +6,26 @@ import { Badge } from '@/components/ui/badge';
 import { Container, Section } from '@/components/layout';
 import { SITE_CONFIG } from '@/lib/constants';
 
+// BreadcrumbList schema
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    {
+      '@type': 'ListItem',
+      position: 1,
+      name: 'Home',
+      item: 'https://theinspectionacademy.com',
+    },
+    {
+      '@type': 'ListItem',
+      position: 2,
+      name: 'Become an Inspector',
+      item: 'https://theinspectionacademy.com/become-an-inspector',
+    },
+  ],
+};
+
 export const metadata = {
   title: 'How to Become a Home Inspector in Texas | The Inspection Academy',
   description: 'Complete guide to becoming a licensed home inspector in Texas. Learn about TREC requirements, licensing paths, and education requirements.',
@@ -81,6 +101,12 @@ const licenseLevels = [
 export default function BecomeAnInspectorPage() {
   return (
     <>
+      {/* Breadcrumb Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+
       {/* Hero */}
       <Section className="pt-12 pb-16" background="gray">
         <Container>

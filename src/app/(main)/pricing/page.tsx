@@ -53,9 +53,53 @@ const faqs = [
   },
 ];
 
+// BreadcrumbList schema
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    {
+      '@type': 'ListItem',
+      position: 1,
+      name: 'Home',
+      item: 'https://theinspectionacademy.com',
+    },
+    {
+      '@type': 'ListItem',
+      position: 2,
+      name: 'Pricing',
+      item: 'https://theinspectionacademy.com/pricing',
+    },
+  ],
+};
+
+// FAQ Schema for rich results
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((faq) => ({
+    '@type': 'Question',
+    name: faq.question,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: faq.answer,
+    },
+  })),
+};
+
 export default function PricingPage() {
   return (
     <>
+      {/* FAQ Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+
       {/* Hero */}
       <Section className="pt-12 pb-16" background="gray">
         <Container>

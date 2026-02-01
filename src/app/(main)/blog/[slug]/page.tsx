@@ -47,7 +47,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
         ? [{ url: post.image, width: 1200, height: 630, alt: post.title }]
         : [
             {
-              url: 'https://theinspectionacademy.com/og-blog.png',
+              url: 'https://theinspectionacademy.com/og-image.png',
               width: 1200,
               height: 630,
               alt: post.title,
@@ -60,7 +60,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       description: post.excerpt,
       images: post.image
         ? [post.image]
-        : ['https://theinspectionacademy.com/og-blog.png'],
+        : ['https://theinspectionacademy.com/og-image.png'],
     },
     alternates: {
       canonical: url,
@@ -180,12 +180,42 @@ export default async function BlogPostPage({ params }: PageProps) {
     keywords: post.tags?.join(', '),
   };
 
+  // BreadcrumbList schema
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Home',
+        item: 'https://theinspectionacademy.com',
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: 'Blog',
+        item: 'https://theinspectionacademy.com/blog',
+      },
+      {
+        '@type': 'ListItem',
+        position: 3,
+        name: post.title,
+        item: shareUrl,
+      },
+    ],
+  };
+
   return (
     <>
       {/* JSON-LD Schema */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
 
       {/* Hero */}

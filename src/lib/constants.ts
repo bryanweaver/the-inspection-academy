@@ -19,8 +19,8 @@ export const SITE_CONFIG = {
   },
 
   social: {
-    facebook: '',
-    instagram: '',
+    facebook: 'https://www.facebook.com/theinspectioncompanytx',
+    instagram: 'https://www.instagram.com/theinspectionacademy/',
     linkedin: '',
   },
 } as const;

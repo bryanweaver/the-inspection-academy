@@ -55,13 +55,13 @@ export const metadata: Metadata = {
   },
 };
 
-// Organization + LocalBusiness Schema
+// Organization Schema (includes reviews)
 const organizationSchema = {
   '@context': 'https://schema.org',
   '@type': ['Organization', 'EducationalOrganization'],
   name: 'The Inspection Academy',
   url: 'https://theinspectionacademy.com',
-  logo: 'https://theinspectionacademy.com/logo.png',
+  logo: 'https://theinspectionacademy.com/logo-blue.png',
   description:
     'TREC-approved Texas home inspector training with 67% first-time pass rate. Online courses using proven Adult Learning Theory.',
   telephone: '+1-281-917-7360',
@@ -76,7 +76,10 @@ const organizationSchema = {
     '@type': 'State',
     name: 'Texas',
   },
-  sameAs: [],
+  sameAs: [
+    'https://www.facebook.com/theinspectioncompanytx',
+    'https://www.instagram.com/theinspectionacademy/',
+  ],
   hasCredential: {
     '@type': 'EducationalOccupationalCredential',
     credentialCategory: 'TREC Approved Provider',
@@ -85,6 +88,31 @@ const organizationSchema = {
       name: 'Texas Real Estate Commission',
     },
   },
+  aggregateRating: {
+    '@type': 'AggregateRating',
+    ratingValue: '5',
+    bestRating: '5',
+    worstRating: '1',
+    ratingCount: '1',
+    reviewCount: '1',
+  },
+  review: [
+    {
+      '@type': 'Review',
+      author: {
+        '@type': 'Person',
+        name: 'Monte S.',
+      },
+      reviewRating: {
+        '@type': 'Rating',
+        ratingValue: '5',
+        bestRating: '5',
+        worstRating: '1',
+      },
+      reviewBody:
+        'I had a great experience with The Inspection Academy. The course material was clear, thorough, and easy to follow, making the licensing process much less stressful. Matthew has done an excellent job structuring the program so it\'s practical, up to date, and focused on what you actually need to become certified. Highly recommend this course to anyone serious about becoming a licensed home inspector.',
+    },
+  ],
 };
 
 const courseSchema = {
