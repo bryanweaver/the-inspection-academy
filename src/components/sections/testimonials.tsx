@@ -54,29 +54,31 @@ export function Testimonials() {
             </CardContent>
           </Card>
 
-          {/* Navigation */}
-          <div className="flex items-center justify-center gap-4 mt-8">
-            <Button variant="outline" size="icon" onClick={prev}>
-              <ChevronLeft className="h-4 w-4" />
-            </Button>
+          {/* Navigation - only show if more than one testimonial */}
+          {testimonials.length > 1 && (
+            <div className="flex items-center justify-center gap-4 mt-8">
+              <Button variant="outline" size="icon" onClick={prev}>
+                <ChevronLeft className="h-4 w-4" />
+              </Button>
 
-            {/* Dots */}
-            <div className="flex gap-2">
-              {testimonials.map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => setActiveIndex(index)}
-                  className={`w-2 h-2 rounded-full transition-colors ${
-                    index === activeIndex ? 'bg-primary' : 'bg-gray-300'
-                  }`}
-                />
-              ))}
+              {/* Dots */}
+              <div className="flex gap-2">
+                {testimonials.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setActiveIndex(index)}
+                    className={`w-2 h-2 rounded-full transition-colors ${
+                      index === activeIndex ? 'bg-primary' : 'bg-gray-300'
+                    }`}
+                  />
+                ))}
+              </div>
+
+              <Button variant="outline" size="icon" onClick={next}>
+                <ChevronRight className="h-4 w-4" />
+              </Button>
             </div>
-
-            <Button variant="outline" size="icon" onClick={next}>
-              <ChevronRight className="h-4 w-4" />
-            </Button>
-          </div>
+          )}
         </div>
       </Container>
     </Section>

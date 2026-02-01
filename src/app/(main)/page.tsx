@@ -8,6 +8,7 @@ import {
   CourseBundles,
   Features,
   TRECData,
+  Testimonials,
   CostOfFailure,
   SuccessStakes,
   SubscriptionCallout,
@@ -130,7 +131,8 @@ export default function HomePage() {
       <MoneyBackGuarantee />     {/* Pass-or-refund guarantee */}
       <CourseBundles />          {/* The offer: pricing with promo */}
       <Features />               {/* Why students choose TIA */}
-      <TRECData />               {/* 67% pass rate - #2 in Texas (replaces testimonials) */}
+      <TRECData />               {/* 67% pass rate - #2 in Texas */}
+      <Testimonials />           {/* Student testimonials */}
       <CostOfFailure />          {/* Stakes: what failure costs */}
       <SuccessStakes />          {/* Stakes: what success brings */}
       <SubscriptionCallout />    {/* 0% interest payment plans */}
