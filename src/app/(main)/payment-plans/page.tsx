@@ -16,6 +16,12 @@ export const metadata = {
     siteName: 'The Inspection Academy',
     images: [{ url: '/og-image.png', width: 1200, height: 630 }],
   },
+  twitter: {
+    card: 'summary_large_image',
+    title: '0% Interest Payment Plans | The Inspection Academy',
+    description: 'Affordable payment plans for Texas home inspector training. No credit check. 12, 18, or 24 month terms.',
+    images: ['/og-image.png'],
+  },
   alternates: {
     canonical: 'https://theinspectionacademy.com/payment-plans',
   },

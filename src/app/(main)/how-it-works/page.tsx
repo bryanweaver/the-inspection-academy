@@ -15,6 +15,12 @@ export const metadata = {
     siteName: 'The Inspection Academy',
     images: [{ url: '/og-image.png', width: 1200, height: 630 }],
   },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'How It Works | The Inspection Academy',
+    description: 'Our proven 3-step process using Adult Learning Theory helps you pass your Texas home inspector exam.',
+    images: ['/og-image.png'],
+  },
   alternates: {
     canonical: 'https://theinspectionacademy.com/how-it-works',
   },

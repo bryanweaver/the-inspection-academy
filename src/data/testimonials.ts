@@ -9,23 +9,10 @@ export interface Testimonial {
 
 export const testimonials: Testimonial[] = [
   {
-    id: '2',
-    quote: 'As a non-native English speaker, the multi-language support made all the difference. I could learn the material in Spanish and still pass the exam.',
-    author: 'Maria G.',
-    title: 'Licensed TX Inspector',
-    rating: 5,
-  },
-  {
-    id: '3',
-    quote: 'The Spectora training alone was worth the price. I started my business knowing exactly how to use industry-standard software.',
-    author: 'Robert M.',
-    title: 'Licensed TX Inspector',
-    rating: 5,
-  },
-  {
-    id: '4',
-    quote: 'I tried another school first and failed the exam. TIA\'s approach to teaching actually helped me understand the material, not just memorize it.',
-    author: 'James T.',
+    id: '1',
+    quote:
+      'I had a great experience with The Inspection Academy. The course material was clear, thorough, and easy to follow, making the licensing process much less stressful. Matthew has done an excellent job structuring the program so it\'s practical, up to date, and focused on what you actually need to become certified. Highly recommend this course to anyone serious about becoming a licensed home inspector.',
+    author: 'Monte S.',
     title: 'Licensed TX Inspector',
     rating: 5,
   },

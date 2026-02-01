@@ -3,7 +3,7 @@
 import { useEffect } from 'react';
 import { usePathname } from 'next/navigation';
 import Script from 'next/script';
-import { pushToDataLayer, getGTMId, captureAttributionOnLoad } from '@/lib/analytics';
+import { pushToDataLayer, getGTMId, captureAttributionOnLoad, reportWebVitals } from '@/lib/analytics';
 
 export function AnalyticsProvider({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
@@ -12,6 +12,7 @@ export function AnalyticsProvider({ children }: { children: React.ReactNode }) {
   // Initialize on mount
   useEffect(() => {
     captureAttributionOnLoad();
+    reportWebVitals();
   }, []);
 
   // Track page views on route change

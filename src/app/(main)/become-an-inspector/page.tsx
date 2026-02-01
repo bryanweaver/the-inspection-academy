@@ -16,6 +16,12 @@ export const metadata = {
     siteName: 'The Inspection Academy',
     images: [{ url: '/og-image.png', width: 1200, height: 630 }],
   },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'How to Become a Home Inspector in Texas',
+    description: 'Step-by-step guide to getting your Texas home inspector license. TREC requirements, education paths, and career info.',
+    images: ['/og-image.png'],
+  },
   alternates: {
     canonical: 'https://theinspectionacademy.com/become-an-inspector',
   },
