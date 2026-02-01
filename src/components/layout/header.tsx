@@ -28,10 +28,10 @@ export function Header() {
           {/* Logo */}
           <Link href="/" className="flex items-center">
             <Image
-              src="/logo-blue.png"
+              src="/logo-blue.webp"
               alt="The Inspection Academy"
               width={400}
-              height={80}
+              height={200}
               className="h-20 w-auto"
               priority
             />
