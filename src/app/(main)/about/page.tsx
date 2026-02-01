@@ -5,6 +5,26 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Container, Section } from '@/components/layout';
 import { SITE_CONFIG } from '@/lib/constants';
 
+// BreadcrumbList schema
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    {
+      '@type': 'ListItem',
+      position: 1,
+      name: 'Home',
+      item: 'https://theinspectionacademy.com',
+    },
+    {
+      '@type': 'ListItem',
+      position: 2,
+      name: 'About',
+      item: 'https://theinspectionacademy.com/about',
+    },
+  ],
+};
+
 export const metadata = {
   title: 'About | The Inspection Academy',
   description: 'Learn about The Inspection Academy, our mission, and our commitment to helping aspiring home inspectors succeed in Texas.',
@@ -70,6 +90,12 @@ const storyPoints = [
 export default function AboutPage() {
   return (
     <>
+      {/* Breadcrumb Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+
       {/* Hero */}
       <Section className="pt-12 pb-16" background="gray">
         <Container>

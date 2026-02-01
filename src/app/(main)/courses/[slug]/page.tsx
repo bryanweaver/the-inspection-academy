@@ -56,6 +56,8 @@ export default async function CourseDetailPage({ params }: PageProps) {
     notFound();
   }
 
+  const courseUrl = `https://theinspectionacademy.com/courses/${course.slug}`;
+
   // Course structured data for rich results
   const courseSchema = {
     '@context': 'https://schema.org',
@@ -72,7 +74,7 @@ export default async function CourseDetailPage({ params }: PageProps) {
       price: course.price,
       priceCurrency: 'USD',
       availability: 'https://schema.org/InStock',
-      url: `https://theinspectionacademy.com/courses/${course.slug}`,
+      url: courseUrl,
     },
     hasCourseInstance: {
       '@type': 'CourseInstance',
@@ -81,12 +83,42 @@ export default async function CourseDetailPage({ params }: PageProps) {
     },
   };
 
+  // BreadcrumbList schema
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Home',
+        item: 'https://theinspectionacademy.com',
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: 'Courses',
+        item: 'https://theinspectionacademy.com/courses',
+      },
+      {
+        '@type': 'ListItem',
+        position: 3,
+        name: course.title,
+        item: courseUrl,
+      },
+    ],
+  };
+
   return (
     <>
       {/* Course Schema */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(courseSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
 
       {/* Hero */}

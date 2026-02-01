@@ -4,6 +4,60 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Container, Section } from '@/components/layout';
 import { SITE_CONFIG } from '@/lib/constants';
 
+// BreadcrumbList schema
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    {
+      '@type': 'ListItem',
+      position: 1,
+      name: 'Home',
+      item: 'https://theinspectionacademy.com',
+    },
+    {
+      '@type': 'ListItem',
+      position: 2,
+      name: 'Contact',
+      item: 'https://theinspectionacademy.com/contact',
+    },
+  ],
+};
+
+// LocalBusiness schema for contact page
+const localBusinessSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'LocalBusiness',
+  '@id': 'https://theinspectionacademy.com/#business',
+  name: 'The Inspection Academy',
+  description:
+    'TREC-approved Texas home inspector training with 67% first-time pass rate. Online courses using proven Adult Learning Theory.',
+  url: 'https://theinspectionacademy.com',
+  logo: 'https://theinspectionacademy.com/logo-blue.png',
+  image: 'https://theinspectionacademy.com/og-image.png',
+  telephone: '+1-281-917-7360',
+  email: 'mwarner@theinspectionacademy.com',
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Houston',
+    addressRegion: 'TX',
+    addressCountry: 'US',
+  },
+  openingHoursSpecification: [
+    {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+      opens: '09:00',
+      closes: '18:00',
+    },
+  ],
+  sameAs: [
+    'https://www.facebook.com/theinspectioncompanytx',
+    'https://www.instagram.com/theinspectionacademy/',
+  ],
+  priceRange: '$$',
+};
+
 export const metadata = {
   title: 'Contact | The Inspection Academy',
   description: 'Get in touch with The Inspection Academy. Schedule a meeting, send an email, or call us at 281-917-7360.',
@@ -56,6 +110,16 @@ const contactMethods = [
 export default function ContactPage() {
   return (
     <>
+      {/* LocalBusiness Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+
       {/* Hero */}
       <Section className="pt-12 pb-16" background="gray">
         <Container>
