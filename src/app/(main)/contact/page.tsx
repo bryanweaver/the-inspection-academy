@@ -14,6 +14,12 @@ export const metadata = {
     siteName: 'The Inspection Academy',
     images: [{ url: '/og-image.png', width: 1200, height: 630 }],
   },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Contact | The Inspection Academy',
+    description: 'Have questions about Texas home inspector training? Schedule a free meeting or call us at 281-917-7360.',
+    images: ['/og-image.png'],
+  },
   alternates: {
     canonical: 'https://theinspectionacademy.com/contact',
   },

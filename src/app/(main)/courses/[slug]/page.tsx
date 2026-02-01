@@ -23,9 +23,28 @@ export async function generateMetadata({ params }: PageProps) {
   const course = courses.find((c) => c.slug === slug);
   if (!course) return {};
 
+  const url = `https://theinspectionacademy.com/courses/${course.slug}`;
+
   return {
     title: `${course.title} | The Inspection Academy`,
     description: course.description,
+    openGraph: {
+      title: `${course.title} | The Inspection Academy`,
+      description: course.description,
+      url,
+      siteName: 'The Inspection Academy',
+      images: [{ url: '/og-image.png', width: 1200, height: 630 }],
+      type: 'website',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `${course.title} | The Inspection Academy`,
+      description: course.description,
+      images: ['/og-image.png'],
+    },
+    alternates: {
+      canonical: url,
+    },
   };
 }
 
@@ -37,8 +56,39 @@ export default async function CourseDetailPage({ params }: PageProps) {
     notFound();
   }
 
+  // Course structured data for rich results
+  const courseSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Course',
+    name: course.title,
+    description: course.description,
+    provider: {
+      '@type': 'Organization',
+      name: 'The Inspection Academy',
+      url: 'https://theinspectionacademy.com',
+    },
+    offers: {
+      '@type': 'Offer',
+      price: course.price,
+      priceCurrency: 'USD',
+      availability: 'https://schema.org/InStock',
+      url: `https://theinspectionacademy.com/courses/${course.slug}`,
+    },
+    hasCourseInstance: {
+      '@type': 'CourseInstance',
+      courseMode: 'Online',
+      courseWorkload: 'PT154H',
+    },
+  };
+
   return (
     <>
+      {/* Course Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(courseSchema) }}
+      />
+
       {/* Hero */}
       <Section className="pt-12 pb-16" background="gray">
         <Container>
