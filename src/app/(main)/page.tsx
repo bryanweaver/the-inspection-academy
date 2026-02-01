@@ -62,6 +62,7 @@ const organizationSchema = {
   name: 'The Inspection Academy',
   url: 'https://theinspectionacademy.com',
   logo: 'https://theinspectionacademy.com/logo-blue.png',
+  image: 'https://theinspectionacademy.com/og-image.png',
   description:
     'TREC-approved Texas home inspector training with 67% first-time pass rate. Online courses using proven Adult Learning Theory.',
   telephone: '+1-281-917-7360',
