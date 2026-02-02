@@ -1,19 +1,41 @@
 import type { Metadata } from 'next';
-import {
-  Hero,
-  ProblemSolution,
-  GuideCredentials,
-  HowItWorks,
-  MoneyBackGuarantee,
-  CourseBundles,
-  Features,
-  TRECData,
-  Testimonials,
-  CostOfFailure,
-  SuccessStakes,
-  SubscriptionCallout,
-  CTA,
-} from '@/components/sections';
+import dynamic from 'next/dynamic';
+import { Hero, CTA } from '@/components/sections';
+
+// Lazy-load below-the-fold sections for better LCP
+const ProblemSolution = dynamic(() =>
+  import('@/components/sections/problem-solution').then((m) => m.ProblemSolution)
+);
+const GuideCredentials = dynamic(() =>
+  import('@/components/sections/guide-credentials').then((m) => m.GuideCredentials)
+);
+const HowItWorks = dynamic(() =>
+  import('@/components/sections/how-it-works').then((m) => m.HowItWorks)
+);
+const MoneyBackGuarantee = dynamic(() =>
+  import('@/components/sections/money-back-guarantee').then((m) => m.MoneyBackGuarantee)
+);
+const CourseBundles = dynamic(() =>
+  import('@/components/sections/course-bundles').then((m) => m.CourseBundles)
+);
+const Features = dynamic(() =>
+  import('@/components/sections/features').then((m) => m.Features)
+);
+const TRECData = dynamic(() =>
+  import('@/components/sections/trec-data').then((m) => m.TRECData)
+);
+const Testimonials = dynamic(() =>
+  import('@/components/sections/testimonials').then((m) => m.Testimonials)
+);
+const CostOfFailure = dynamic(() =>
+  import('@/components/sections/cost-of-failure').then((m) => m.CostOfFailure)
+);
+const SuccessStakes = dynamic(() =>
+  import('@/components/sections/success-stakes').then((m) => m.SuccessStakes)
+);
+const SubscriptionCallout = dynamic(() =>
+  import('@/components/sections/subscription-callout').then((m) => m.SubscriptionCallout)
+);
 
 export const metadata: Metadata = {
   title: 'The Inspection Academy | Texas Home Inspector Training',
