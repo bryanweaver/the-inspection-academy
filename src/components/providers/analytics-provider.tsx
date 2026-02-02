@@ -9,10 +9,18 @@ export function AnalyticsProvider({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
   const gtmId = getGTMId();
 
-  // Initialize on mount
+  // Initialize on mount - defer non-critical analytics
   useEffect(() => {
+    // Capture attribution immediately (lightweight)
     captureAttributionOnLoad();
-    reportWebVitals();
+
+    // Defer web-vitals reporting until browser is idle
+    if ('requestIdleCallback' in window) {
+      requestIdleCallback(() => reportWebVitals());
+    } else {
+      // Fallback: delay by 2 seconds for older browsers
+      setTimeout(() => reportWebVitals(), 2000);
+    }
   }, []);
 
   // Track page views on route change
@@ -29,7 +37,7 @@ export function AnalyticsProvider({ children }: { children: React.ReactNode }) {
         <>
           <Script
             id="gtm-script"
-            strategy="afterInteractive"
+            strategy="lazyOnload"
             dangerouslySetInnerHTML={{
               __html: `
                 (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
