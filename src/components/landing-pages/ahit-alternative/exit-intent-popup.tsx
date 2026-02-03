@@ -56,7 +56,7 @@ export function ExitIntentPopup() {
       />
 
       {/* Modal */}
-      <div className="relative bg-white rounded-2xl shadow-2xl max-w-md w-full p-8 animate-in fade-in zoom-in duration-300">
+      <div className="relative bg-white rounded-2xl shadow-2xl max-w-2xl w-full p-8 animate-in fade-in zoom-in duration-300">
         {/* Close Button */}
         <button
           onClick={handleClose}
@@ -72,11 +72,24 @@ export function ExitIntentPopup() {
           </div>
 
           <h3 className="text-2xl font-bold text-gray-900 mb-2">
-            Wait! Get the Free Comparison Guide
+            Before you enroll anywhere, get the facts.
           </h3>
 
-          <p className="text-gray-600 mb-6">
-            Download our Texas Home Inspection School Comparison Guide and make an informed decision on your own time.
+          <p className="text-gray-600 mb-6 text-left">
+            This free guide provides you with information you need to know, like:
+          </p>
+
+          <ul className="text-gray-600 mb-6 text-left text-sm space-y-2">
+            <li>• How to assess your learning style & experience level to find the right education system</li>
+            <li>• The different types of education systems and the needs they match well with</li>
+            <li>• How to check any school&apos;s official pass rate on TREC&apos;s website</li>
+            <li>• The questions schools don&apos;t want you to ask them</li>
+            <li>• Red flags to watch for before you enroll</li>
+            <li>• A side-by-side comparison worksheet to evaluate all of the options in Texas</li>
+          </ul>
+
+          <p className="text-gray-700 mb-6 text-sm font-medium">
+            Texas is the only state that publishes school pass rates. Use that to your advantage.
           </p>
 
           {/* MailerLite Form */}
@@ -86,7 +99,7 @@ export function ExitIntentPopup() {
             onClick={handleClose}
             className="mt-4 text-sm text-gray-400 hover:text-gray-600 transition-colors"
           >
-            No thanks, I&apos;ll keep researching
+            Close
           </button>
         </div>
       </div>
