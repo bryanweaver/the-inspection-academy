@@ -1,9 +1,16 @@
+'use client';
+
 import Link from 'next/link';
 import { Phone, Mail, Calendar } from 'lucide-react';
 import { Container } from './container';
 import { SITE_CONFIG, FOOTER_LINKS } from '@/lib/constants';
+import { trackEvent } from '@/lib/analytics';
 
 export function Footer() {
+  const handlePhoneClick = () => {
+    trackEvent('phone_call', { location: 'footer' });
+  };
+
   return (
     <footer className="bg-gray-900 text-gray-300">
       <Container>
@@ -69,6 +76,7 @@ export function Footer() {
                 <li>
                   <a
                     href={`tel:${SITE_CONFIG.phone}`}
+                    onClick={handlePhoneClick}
                     className="flex items-center text-sm hover:text-white transition-colors"
                   >
                     <Phone className="mr-2 h-4 w-4" />

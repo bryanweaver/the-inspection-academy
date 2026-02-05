@@ -1,4 +1,4 @@
-import { Header, Footer } from '@/components/layout';
+import { Header, Footer, StickyCTA } from '@/components/layout';
 import { AnalyticsProvider } from '@/components/providers';
 
 export default function MainLayout({
@@ -11,6 +11,7 @@ export default function MainLayout({
       <Header />
       <main className="min-h-screen">{children}</main>
       <Footer />
+      <StickyCTA />
     </AnalyticsProvider>
   );
 }
