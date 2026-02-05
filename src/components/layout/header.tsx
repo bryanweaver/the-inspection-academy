@@ -85,7 +85,7 @@ export function Header() {
                   </Link>
                 ))}
                 <hr className="my-4" />
-                <Button asChild className="w-full" onClick={handlePhoneClick}>
+                <Button asChild className="w-full" onClick={() => { handlePhoneClick(); setIsOpen(false); }}>
                   <a href={`tel:${SITE_CONFIG.phone}`}>
                     <Phone className="mr-2 h-5 w-5" />
                     {SITE_CONFIG.phone}
