@@ -54,17 +54,17 @@ export function PassRateStats() {
           </h2>
 
           {/* Bar Chart */}
-          <div className="bg-white rounded-xl p-8 shadow-sm mb-8">
-            <div className="flex items-end justify-center gap-8 md:gap-16 h-64">
+          <div className="bg-white rounded-xl p-4 sm:p-8 shadow-sm mb-8">
+            <div className="flex items-end justify-center gap-4 sm:gap-8 md:gap-16 h-64">
               {passRateStats.map((stat, index) => (
                 <div
                   key={stat.label}
-                  className="flex flex-col items-center flex-1 max-w-[120px]"
+                  className="flex flex-col items-center flex-1 max-w-[100px] sm:max-w-[120px]"
                 >
                   {/* Bar */}
                   <div className="w-full flex flex-col items-center justify-end h-48">
                     <div
-                      className={`w-full max-w-[80px] rounded-t-lg ${colorClasses[stat.color]} transition-all duration-1000 ease-out relative`}
+                      className={`w-full max-w-[60px] sm:max-w-[80px] rounded-t-lg ${colorClasses[stat.color]} transition-all duration-1000 ease-out relative`}
                       style={{
                         height: isVisible ? `${(stat.value / 70) * 100}%` : '0%',
                         transitionDelay: `${index * 200}ms`,
@@ -72,7 +72,7 @@ export function PassRateStats() {
                     >
                       {/* Value on bar */}
                       <div
-                        className={`absolute -top-8 left-1/2 -translate-x-1/2 text-lg font-bold transition-opacity duration-500 ${textColorClasses[stat.color]}`}
+                        className={`absolute -top-7 left-1/2 -translate-x-1/2 text-base sm:text-lg font-bold transition-opacity duration-500 whitespace-nowrap ${textColorClasses[stat.color]}`}
                         style={{
                           opacity: isVisible ? 1 : 0,
                           transitionDelay: `${index * 200 + 500}ms`,
@@ -84,26 +84,33 @@ export function PassRateStats() {
                   </div>
 
                   {/* Label */}
-                  <span className="mt-4 text-sm md:text-base text-gray-600 text-center font-medium">
-                    {stat.label}
+                  <span className="mt-3 text-xs sm:text-sm md:text-base text-gray-600 text-center font-medium leading-tight">
+                    {stat.label === 'Texas Average' ? (
+                      <>
+                        <span className="sm:hidden">TX Avg</span>
+                        <span className="hidden sm:inline">Texas Average</span>
+                      </>
+                    ) : (
+                      stat.label
+                    )}
                   </span>
                 </div>
               ))}
             </div>
 
             {/* Legend */}
-            <div className="flex justify-center gap-6 mt-6 pt-6 border-t">
+            <div className="flex justify-center gap-4 sm:gap-6 mt-6 pt-6 border-t flex-wrap">
               <div className="flex items-center gap-2">
                 <div className="w-3 h-3 rounded bg-green-500" />
-                <span className="text-sm text-gray-600">Above Average</span>
+                <span className="text-xs sm:text-sm text-gray-600">Above Average</span>
               </div>
               <div className="flex items-center gap-2">
                 <div className="w-3 h-3 rounded bg-amber-500" />
-                <span className="text-sm text-gray-600">State Average</span>
+                <span className="text-xs sm:text-sm text-gray-600">Texas Average</span>
               </div>
               <div className="flex items-center gap-2">
                 <div className="w-3 h-3 rounded bg-red-500" />
-                <span className="text-sm text-gray-600">Below Average</span>
+                <span className="text-xs sm:text-sm text-gray-600">Below Average</span>
               </div>
             </div>
           </div>
