@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import Link from 'next/link';
 import { X, FileText } from 'lucide-react';
 import { trackEvent } from '@/lib/analytics';
 
@@ -94,6 +95,13 @@ export function ExitIntentPopup() {
 
           {/* MailerLite Form */}
           <div className="ml-embedded" data-form={MAILERLITE_FORM_ID} />
+
+          <p className="mt-4 text-xs text-gray-400">
+            By submitting, you agree to our{' '}
+            <Link href="/privacy-policy" className="underline hover:text-gray-600">
+              Privacy Policy
+            </Link>
+          </p>
 
           <button
             onClick={handleClose}

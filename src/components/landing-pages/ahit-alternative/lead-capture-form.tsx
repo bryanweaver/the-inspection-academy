@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import { FileText } from 'lucide-react';
 
 const MAILERLITE_FORM_ID = '89Auv2';
@@ -70,6 +71,12 @@ export function LeadCaptureForm({ variant = 'section' }: LeadCaptureFormProps) {
             {/* Right column - form */}
             <div className="flex flex-col justify-center">
               <div className="ml-embedded" data-form={MAILERLITE_FORM_ID} />
+              <p className="mt-3 text-xs text-gray-400 text-center">
+                By submitting, you agree to our{' '}
+                <Link href="/privacy-policy" className="underline hover:text-gray-600">
+                  Privacy Policy
+                </Link>
+              </p>
             </div>
           </div>
         </div>

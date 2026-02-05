@@ -114,7 +114,10 @@ export function Footer() {
             <p className="text-sm text-gray-400">
               &copy; {new Date().getFullYear()} The Inspection Academy LLC. All rights reserved.
             </p>
-                      </div>
+            <Link href="/privacy-policy" className="text-sm text-gray-400 hover:text-white transition-colors">
+              Privacy Policy
+            </Link>
+          </div>
         </div>
       </Container>
     </footer>

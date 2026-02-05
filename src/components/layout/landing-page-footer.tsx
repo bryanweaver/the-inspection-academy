@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { Phone, Mail } from 'lucide-react';
 import { Container } from './container';
 import { SITE_CONFIG } from '@/lib/constants';
@@ -36,11 +37,13 @@ export function LandingPageFooter() {
               {SITE_CONFIG.email}
             </a>
           </div>
+        </div>
 
-                  </div>
-
-        <div className="mt-6 pt-6 border-t border-gray-800 text-center text-sm text-gray-500">
-          &copy; {currentYear} The Inspection Academy LLC. All rights reserved.
+        <div className="mt-6 pt-6 border-t border-gray-800 flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-gray-500">
+          <p>&copy; {currentYear} The Inspection Academy LLC. All rights reserved.</p>
+          <Link href="/privacy-policy" className="hover:text-white transition-colors">
+            Privacy Policy
+          </Link>
         </div>
       </Container>
     </footer>
