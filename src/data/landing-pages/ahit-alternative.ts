@@ -384,17 +384,8 @@ export const finalCTAContent = {
     'Money-back guarantee',
     'Texas-based and Texas-focused',
   ],
-  phone: '281-917-7360',
   ctaPrimary: 'Start Your Training Today',
-  ctaSecondary: 'Compare Full Details',
-  ctaTertiary: 'Book an Online Meeting',
-};
-
-// Sticky CTA content
-export const stickyCTAContent = {
-  text: 'Ready to start?',
-  buttonText: 'Enroll Now - $2,495',
-  subtext: '67% pass rate • Books included',
+  ctaSecondary: 'Book an Online Meeting',
 };
 
 // A/B Test variants for headlines

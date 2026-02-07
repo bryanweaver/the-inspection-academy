@@ -3,9 +3,8 @@
 import { useEffect, useState } from 'react';
 import { Phone } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { stickyCTAContent } from '@/data/landing-pages/ahit-alternative';
 import { SITE_CONFIG } from '@/lib/constants';
-import { trackEnrollClick, trackEvent } from '@/lib/analytics';
+import { trackScheduleCall, trackEvent } from '@/lib/analytics';
 
 export function StickyCTA() {
   const [isVisible, setIsVisible] = useState(false);
@@ -21,8 +20,8 @@ export function StickyCTA() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const handleEnrollClick = () => {
-    trackEnrollClick('sticky_cta');
+  const handleScheduleClick = () => {
+    trackScheduleCall('sticky_cta');
   };
 
   const handleCallClick = () => {
@@ -53,21 +52,21 @@ export function StickyCTA() {
           {/* Text */}
           <div className="flex-1 min-w-0">
             <div className="font-semibold text-gray-900 text-sm">
-              {stickyCTAContent.text}
+              Ready to get started?
             </div>
             <div className="text-xs text-gray-500 truncate">
-              {stickyCTAContent.subtext}
+              Talk with an expert today
             </div>
           </div>
 
-          {/* Enroll Button */}
-          <Button size="sm" className="flex-shrink-0" asChild onClick={handleEnrollClick}>
+          {/* Schedule Meeting Button */}
+          <Button size="sm" className="flex-shrink-0" asChild onClick={handleScheduleClick}>
             <a
-              href={SITE_CONFIG.links.courseCatalog}
+              href={SITE_CONFIG.links.scheduleCall}
               target="_blank"
               rel="noopener noreferrer"
             >
-              {stickyCTAContent.buttonText}
+              Schedule a Meeting
             </a>
           </Button>
         </div>

@@ -5,8 +5,13 @@ import { Phone } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Container } from './container';
 import { SITE_CONFIG } from '@/lib/constants';
+import { trackEvent } from '@/lib/analytics';
 
 export function LandingPageHeader() {
+  const handlePhoneClick = () => {
+    trackEvent('phone_call', { location: 'header' });
+  };
+
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60">
       <Container>
@@ -16,21 +21,14 @@ export function LandingPageHeader() {
             <span className="text-xl font-bold text-primary">The Inspection Academy</span>
           </Link>
 
-          {/* Phone + CTA */}
-          <div className="flex items-center space-x-4">
-            <a
-              href={`tel:${SITE_CONFIG.phone}`}
-              className="hidden sm:flex items-center text-sm text-gray-600 hover:text-primary transition-colors"
-            >
+          {/* Phone CTA */}
+          <Button asChild onClick={handlePhoneClick}>
+            <a href={`tel:${SITE_CONFIG.phone}`}>
               <Phone className="mr-2 h-4 w-4" />
-              {SITE_CONFIG.phone}
+              <span className="hidden sm:inline">{SITE_CONFIG.phone}</span>
+              <span className="sm:hidden">Call Now</span>
             </a>
-            <Button asChild>
-              <a href={SITE_CONFIG.links.scheduleCall} target="_blank" rel="noopener noreferrer">
-                Schedule a Meeting
-              </a>
-            </Button>
-          </div>
+          </Button>
         </div>
       </Container>
     </header>
