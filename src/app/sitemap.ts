@@ -20,6 +20,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/blog',
     '/money-back-guarantee',
     '/ahit-alternative',
+    '/privacy-policy',
   ];
 
   const staticUrls = staticPages.map((page) => ({
