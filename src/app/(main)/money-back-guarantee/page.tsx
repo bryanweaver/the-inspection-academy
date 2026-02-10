@@ -55,7 +55,10 @@ export default function TermsPage() {
         <Container>
           <div className="max-w-3xl mx-auto">
             <div className="prose prose-lg max-w-none">
-              {/* Section 1 - Introduction */}
+              {/* Section 1 - Overview */}
+              <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">
+                1. Overview
+              </h2>
               <div className="bg-green-50 border border-green-200 rounded-xl p-6 mb-8">
                 <p className="text-green-800 m-0">
                   This Guarantee applies exclusively to students preparing for the Texas Professional Inspector or Real Estate Inspector licensing exams. If a student meets all requirements outlined in this document and does not pass the licensing exam on their first attempt, TIA will refund the full amount of tuition paid.
