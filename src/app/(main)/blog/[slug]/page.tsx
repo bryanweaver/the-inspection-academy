@@ -109,9 +109,9 @@ function renderContent(content: string) {
           <Image
             src={imageMatch[2]}
             alt={imageMatch[1]}
-            width={600}
-            height={400}
-            className="rounded-xl w-full max-w-md h-auto"
+            width={800}
+            height={800}
+            className="rounded-2xl max-w-full h-auto"
           />
         </figure>
       );
@@ -239,17 +239,18 @@ export default async function BlogPostPage({ params }: PageProps) {
       <Section className="pt-8 pb-12" background="gray">
         <Container>
           <div className="max-w-3xl mx-auto">
-            <Link
-              href="/blog"
-              className="inline-flex items-center text-sm text-gray-600 hover:text-primary mb-6"
-            >
-              <ArrowLeft className="mr-2 h-4 w-4" />
-              Back to Blog
-            </Link>
-
-            <Badge variant="secondary" className="mb-4">
-              {post.category}
-            </Badge>
+            <div className="flex items-center justify-between mb-6">
+              <Link
+                href="/blog"
+                className="inline-flex items-center text-sm text-gray-600 hover:text-primary"
+              >
+                <ArrowLeft className="mr-2 h-4 w-4" />
+                Back to Blog
+              </Link>
+              <Badge variant="secondary">
+                {post.category}
+              </Badge>
+            </div>
 
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
               {post.title}
