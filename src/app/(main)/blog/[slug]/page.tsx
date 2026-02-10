@@ -1,5 +1,6 @@
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
+import Image from 'next/image';
 import { ChevronRight, Calendar, Clock, User, ArrowLeft } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
@@ -99,8 +100,24 @@ function renderContent(content: string) {
   for (let i = 0; i < lines.length; i++) {
     const line = lines[i];
 
+    // Images: ![alt](src)
+    const imageMatch = line.match(/^!\[(.+?)\]\((.+?)\)$/);
+    if (imageMatch) {
+      flushList();
+      elements.push(
+        <figure key={elements.length} className="my-8 flex justify-center">
+          <Image
+            src={imageMatch[2]}
+            alt={imageMatch[1]}
+            width={600}
+            height={400}
+            className="rounded-xl w-full max-w-md h-auto"
+          />
+        </figure>
+      );
+    }
     // Headers
-    if (line.startsWith('## ')) {
+    else if (line.startsWith('## ')) {
       flushList();
       elements.push(
         <h2 key={elements.length} className="text-2xl font-bold text-gray-900 mt-8 mb-4">
