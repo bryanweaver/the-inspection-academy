@@ -14,12 +14,12 @@ export const metadata = {
   openGraph: {
     title: 'Texas Home Inspector Courses | The Inspection Academy',
     description: 'TREC-approved training courses with 67% first-time pass rate. Professional and Real Estate Inspector bundles available.',
-    url: 'https://theinspectionacademy.com/courses',
+    url: 'https://www.theinspectionacademy.com/courses',
     siteName: 'The Inspection Academy',
     images: [{ url: '/og-image.png', width: 1200, height: 630 }],
   },
   alternates: {
-    canonical: 'https://theinspectionacademy.com/courses',
+    canonical: 'https://www.theinspectionacademy.com/courses',
   },
 };
 

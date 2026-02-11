@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'The Inspection Academy Blog',
     description: 'Expert insights, guidance, and practical advice for aspiring and current home inspectors in Texas.',
-    url: 'https://theinspectionacademy.com/blog',
+    url: 'https://www.theinspectionacademy.com/blog',
     siteName: 'The Inspection Academy',
     type: 'website',
   },
@@ -22,9 +22,9 @@ export const metadata: Metadata = {
     description: 'Expert insights, guidance, and practical advice for aspiring and current home inspectors in Texas.',
   },
   alternates: {
-    canonical: 'https://theinspectionacademy.com/blog',
+    canonical: 'https://www.theinspectionacademy.com/blog',
     types: {
-      'application/rss+xml': 'https://theinspectionacademy.com/feed.xml',
+      'application/rss+xml': 'https://www.theinspectionacademy.com/feed.xml',
     },
   },
 };

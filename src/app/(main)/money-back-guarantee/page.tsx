@@ -10,7 +10,7 @@ export const metadata = {
   openGraph: {
     title: 'Money-Back Guarantee | The Inspection Academy',
     description: 'Pass your Texas home inspector exam or get your money back. Read our full guarantee terms.',
-    url: 'https://theinspectionacademy.com/money-back-guarantee',
+    url: 'https://www.theinspectionacademy.com/money-back-guarantee',
     siteName: 'The Inspection Academy',
     images: [{ url: '/og-image.png', width: 1200, height: 630 }],
   },
@@ -21,7 +21,7 @@ export const metadata = {
     images: ['/og-image.png'],
   },
   alternates: {
-    canonical: 'https://theinspectionacademy.com/money-back-guarantee',
+    canonical: 'https://www.theinspectionacademy.com/money-back-guarantee',
   },
 };
 

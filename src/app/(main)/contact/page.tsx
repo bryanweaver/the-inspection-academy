@@ -13,13 +13,13 @@ const breadcrumbSchema = {
       '@type': 'ListItem',
       position: 1,
       name: 'Home',
-      item: 'https://theinspectionacademy.com',
+      item: 'https://www.theinspectionacademy.com',
     },
     {
       '@type': 'ListItem',
       position: 2,
       name: 'Contact',
-      item: 'https://theinspectionacademy.com/contact',
+      item: 'https://www.theinspectionacademy.com/contact',
     },
   ],
 };
@@ -28,13 +28,13 @@ const breadcrumbSchema = {
 const localBusinessSchema = {
   '@context': 'https://schema.org',
   '@type': 'LocalBusiness',
-  '@id': 'https://theinspectionacademy.com/#business',
+  '@id': 'https://www.theinspectionacademy.com/#business',
   name: 'The Inspection Academy',
   description:
     'TREC-approved Texas home inspector training with 67% first-time pass rate. Online courses using proven Adult Learning Theory.',
-  url: 'https://theinspectionacademy.com',
-  logo: 'https://theinspectionacademy.com/logo-blue.png',
-  image: 'https://theinspectionacademy.com/og-image.png',
+  url: 'https://www.theinspectionacademy.com',
+  logo: 'https://www.theinspectionacademy.com/logo-blue.png',
+  image: 'https://www.theinspectionacademy.com/og-image.png',
   telephone: '+1-281-917-7360',
   email: 'mwarner@theinspectionacademy.com',
   address: {
@@ -64,7 +64,7 @@ export const metadata = {
   openGraph: {
     title: 'Contact | The Inspection Academy',
     description: 'Have questions about Texas home inspector training? Schedule a free meeting or call us at 281-917-7360.',
-    url: 'https://theinspectionacademy.com/contact',
+    url: 'https://www.theinspectionacademy.com/contact',
     siteName: 'The Inspection Academy',
     images: [{ url: '/og-image.png', width: 1200, height: 630 }],
   },
@@ -75,7 +75,7 @@ export const metadata = {
     images: ['/og-image.png'],
   },
   alternates: {
-    canonical: 'https://theinspectionacademy.com/contact',
+    canonical: 'https://www.theinspectionacademy.com/contact',
   },
 };
 

@@ -29,7 +29,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     };
   }
 
-  const url = `https://theinspectionacademy.com/blog/${post.slug}`;
+  const url = `https://www.theinspectionacademy.com/blog/${post.slug}`;
 
   return {
     title: `${post.title} | The Inspection Academy Blog`,
@@ -48,7 +48,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
         ? [{ url: post.image, width: 1200, height: 630, alt: post.title }]
         : [
             {
-              url: 'https://theinspectionacademy.com/og-image.png',
+              url: 'https://www.theinspectionacademy.com/og-image.png',
               width: 1200,
               height: 630,
               alt: post.title,
@@ -61,7 +61,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       description: post.excerpt,
       images: post.image
         ? [post.image]
-        : ['https://theinspectionacademy.com/og-image.png'],
+        : ['https://www.theinspectionacademy.com/og-image.png'],
     },
     alternates: {
       canonical: url,
@@ -170,7 +170,7 @@ export default async function BlogPostPage({ params }: PageProps) {
     .filter((p) => p.category === post.category && p.slug !== post.slug)
     .slice(0, 2);
 
-  const shareUrl = `https://theinspectionacademy.com/blog/${post.slug}`;
+  const shareUrl = `https://www.theinspectionacademy.com/blog/${post.slug}`;
 
   // JSON-LD structured data for Article
   const articleSchema = {
@@ -181,12 +181,12 @@ export default async function BlogPostPage({ params }: PageProps) {
     author: {
       '@type': 'Organization',
       name: post.author,
-      url: 'https://theinspectionacademy.com',
+      url: 'https://www.theinspectionacademy.com',
     },
     publisher: {
       '@type': 'Organization',
       name: 'The Inspection Academy',
-      url: 'https://theinspectionacademy.com',
+      url: 'https://www.theinspectionacademy.com',
     },
     datePublished: post.date,
     dateModified: post.date,
@@ -206,13 +206,13 @@ export default async function BlogPostPage({ params }: PageProps) {
         '@type': 'ListItem',
         position: 1,
         name: 'Home',
-        item: 'https://theinspectionacademy.com',
+        item: 'https://www.theinspectionacademy.com',
       },
       {
         '@type': 'ListItem',
         position: 2,
         name: 'Blog',
-        item: 'https://theinspectionacademy.com/blog',
+        item: 'https://www.theinspectionacademy.com/blog',
       },
       {
         '@type': 'ListItem',

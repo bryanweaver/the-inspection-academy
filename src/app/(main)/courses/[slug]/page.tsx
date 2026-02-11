@@ -23,7 +23,7 @@ export async function generateMetadata({ params }: PageProps) {
   const course = courses.find((c) => c.slug === slug);
   if (!course) return {};
 
-  const url = `https://theinspectionacademy.com/courses/${course.slug}`;
+  const url = `https://www.theinspectionacademy.com/courses/${course.slug}`;
 
   return {
     title: `${course.title} | The Inspection Academy`,
@@ -56,7 +56,7 @@ export default async function CourseDetailPage({ params }: PageProps) {
     notFound();
   }
 
-  const courseUrl = `https://theinspectionacademy.com/courses/${course.slug}`;
+  const courseUrl = `https://www.theinspectionacademy.com/courses/${course.slug}`;
 
   // Course structured data for rich results
   const courseSchema = {
@@ -67,7 +67,7 @@ export default async function CourseDetailPage({ params }: PageProps) {
     provider: {
       '@type': 'Organization',
       name: 'The Inspection Academy',
-      url: 'https://theinspectionacademy.com',
+      url: 'https://www.theinspectionacademy.com',
     },
     offers: {
       '@type': 'Offer',
@@ -92,13 +92,13 @@ export default async function CourseDetailPage({ params }: PageProps) {
         '@type': 'ListItem',
         position: 1,
         name: 'Home',
-        item: 'https://theinspectionacademy.com',
+        item: 'https://www.theinspectionacademy.com',
       },
       {
         '@type': 'ListItem',
         position: 2,
         name: 'Courses',
-        item: 'https://theinspectionacademy.com/courses',
+        item: 'https://www.theinspectionacademy.com/courses',
       },
       {
         '@type': 'ListItem',

@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   title: 'Privacy Policy | The Inspection Academy',
   description: 'Privacy Policy for The Inspection Academy. Learn how we collect, use, and protect your personal information.',
   alternates: {
-    canonical: 'https://theinspectionacademy.com/privacy-policy',
+    canonical: 'https://www.theinspectionacademy.com/privacy-policy',
   },
   robots: {
     index: true,

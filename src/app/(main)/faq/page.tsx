@@ -11,7 +11,7 @@ export const metadata = {
   openGraph: {
     title: 'FAQ | The Inspection Academy',
     description: 'Get answers to common questions about Texas home inspector training, licensing requirements, and our courses.',
-    url: 'https://theinspectionacademy.com/faq',
+    url: 'https://www.theinspectionacademy.com/faq',
     siteName: 'The Inspection Academy',
     images: [{ url: '/og-image.png', width: 1200, height: 630 }],
   },
@@ -22,7 +22,7 @@ export const metadata = {
     images: ['/og-image.png'],
   },
   alternates: {
-    canonical: 'https://theinspectionacademy.com/faq',
+    canonical: 'https://www.theinspectionacademy.com/faq',
   },
 };
 
@@ -110,13 +110,13 @@ const breadcrumbSchema = {
       '@type': 'ListItem',
       position: 1,
       name: 'Home',
-      item: 'https://theinspectionacademy.com',
+      item: 'https://www.theinspectionacademy.com',
     },
     {
       '@type': 'ListItem',
       position: 2,
       name: 'FAQ',
-      item: 'https://theinspectionacademy.com/faq',
+      item: 'https://www.theinspectionacademy.com/faq',
     },
   ],
 };

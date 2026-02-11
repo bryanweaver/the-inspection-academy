@@ -38,7 +38,7 @@ export const pageMetadata = {
   title: 'AHIT Alternative Texas | TIA vs AHIT: 67% vs 51% Pass Rate',
   description:
     "Comparing AHIT to TIA? See official TREC data: TIA 67% vs AHIT 51.45%. Same price, but TIA includes textbooks. See the comparison.",
-  url: 'https://theinspectionacademy.com/ahit-alternative',
+  url: 'https://www.theinspectionacademy.com/ahit-alternative',
 };
 
 // Hero section content - NEW STRUCTURE

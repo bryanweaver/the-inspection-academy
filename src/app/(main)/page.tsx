@@ -54,7 +54,7 @@ export const metadata: Metadata = {
     description:
       'Pass your Texas home inspector exam on the first try with our TREC-approved training. 67% pass rate (#2 in Texas). Money-back guarantee included.',
     type: 'website',
-    url: 'https://theinspectionacademy.com',
+    url: 'https://www.theinspectionacademy.com',
     siteName: 'The Inspection Academy',
     images: [
       {
@@ -73,7 +73,7 @@ export const metadata: Metadata = {
     images: ['/og-image.png'],
   },
   alternates: {
-    canonical: 'https://theinspectionacademy.com',
+    canonical: 'https://www.theinspectionacademy.com',
   },
 };
 
@@ -82,9 +82,9 @@ const organizationSchema = {
   '@context': 'https://schema.org',
   '@type': ['Organization', 'EducationalOrganization'],
   name: 'The Inspection Academy',
-  url: 'https://theinspectionacademy.com',
-  logo: 'https://theinspectionacademy.com/logo-blue.png',
-  image: 'https://theinspectionacademy.com/og-image.png',
+  url: 'https://www.theinspectionacademy.com',
+  logo: 'https://www.theinspectionacademy.com/logo-blue.png',
+  image: 'https://www.theinspectionacademy.com/og-image.png',
   description:
     'TREC-approved Texas home inspector training with 67% first-time pass rate. Online courses using proven Adult Learning Theory.',
   telephone: '+1-281-917-7360',
@@ -147,7 +147,7 @@ const courseSchema = {
   provider: {
     '@type': 'Organization',
     name: 'The Inspection Academy',
-    url: 'https://theinspectionacademy.com',
+    url: 'https://www.theinspectionacademy.com',
   },
   educationalLevel: 'Professional',
   occupationalCategory: 'Home Inspector',

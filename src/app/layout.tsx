@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 
 // Use production URL in production, Vercel preview URL otherwise
 const baseUrl = process.env.VERCEL_ENV === 'production'
-  ? 'https://theinspectionacademy.com'
+  ? 'https://www.theinspectionacademy.com'
   : process.env.VERCEL_URL
     ? `https://${process.env.VERCEL_URL}`
     : 'http://localhost:3000';

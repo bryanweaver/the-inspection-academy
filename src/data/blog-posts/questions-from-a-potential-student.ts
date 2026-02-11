@@ -109,6 +109,6 @@ If you have questions, do not hesitate to reach out. We are more than happy to h
   date: '2026-02-10',
   author: 'The Inspection Academy',
   readTime: '10 min read',
-  image: 'https://theinspectionacademy.com/images/blog/questions-from-a-potential-student/online-student-studying.jpg',
+  image: 'https://www.theinspectionacademy.com/images/blog/questions-from-a-potential-student/online-student-studying.jpg',
   tags: ['FAQ', 'pass rates', 'course structure', 'field experience', 'choosing a school'],
 };

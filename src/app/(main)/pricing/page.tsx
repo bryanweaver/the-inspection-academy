@@ -15,7 +15,7 @@ export const metadata = {
   openGraph: {
     title: 'Pricing | The Inspection Academy',
     description: 'Texas home inspector training starting at $1,795. 0% interest payment plans available.',
-    url: 'https://theinspectionacademy.com/pricing',
+    url: 'https://www.theinspectionacademy.com/pricing',
     siteName: 'The Inspection Academy',
     images: [{ url: '/og-image.png', width: 1200, height: 630 }],
   },
@@ -26,7 +26,7 @@ export const metadata = {
     images: ['/og-image.png'],
   },
   alternates: {
-    canonical: 'https://theinspectionacademy.com/pricing',
+    canonical: 'https://www.theinspectionacademy.com/pricing',
   },
 };
 
@@ -62,13 +62,13 @@ const breadcrumbSchema = {
       '@type': 'ListItem',
       position: 1,
       name: 'Home',
-      item: 'https://theinspectionacademy.com',
+      item: 'https://www.theinspectionacademy.com',
     },
     {
       '@type': 'ListItem',
       position: 2,
       name: 'Pricing',
-      item: 'https://theinspectionacademy.com/pricing',
+      item: 'https://www.theinspectionacademy.com/pricing',
     },
   ],
 };

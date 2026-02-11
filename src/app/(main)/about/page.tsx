@@ -14,13 +14,13 @@ const breadcrumbSchema = {
       '@type': 'ListItem',
       position: 1,
       name: 'Home',
-      item: 'https://theinspectionacademy.com',
+      item: 'https://www.theinspectionacademy.com',
     },
     {
       '@type': 'ListItem',
       position: 2,
       name: 'About',
-      item: 'https://theinspectionacademy.com/about',
+      item: 'https://www.theinspectionacademy.com/about',
     },
   ],
 };
@@ -31,7 +31,7 @@ export const metadata = {
   openGraph: {
     title: 'About | The Inspection Academy',
     description: 'We\'re educators who believe everyone deserves access to quality training that actually works. 67% pass rate - #2 in Texas.',
-    url: 'https://theinspectionacademy.com/about',
+    url: 'https://www.theinspectionacademy.com/about',
     siteName: 'The Inspection Academy',
     images: [{ url: '/og-image.png', width: 1200, height: 630 }],
   },
@@ -42,7 +42,7 @@ export const metadata = {
     images: ['/og-image.png'],
   },
   alternates: {
-    canonical: 'https://theinspectionacademy.com/about',
+    canonical: 'https://www.theinspectionacademy.com/about',
   },
 };
 

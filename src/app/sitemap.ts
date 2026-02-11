@@ -2,7 +2,7 @@ import { MetadataRoute } from 'next';
 import { blogPosts } from '@/data/blog-posts';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://theinspectionacademy.com';
+  const baseUrl = 'https://www.theinspectionacademy.com';
 
   // Static pages
   const staticPages = [
