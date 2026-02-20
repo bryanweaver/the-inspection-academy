@@ -2,8 +2,8 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
-import { useState } from 'react';
-import { Menu, X, Phone } from 'lucide-react';
+import { useState, useEffect } from 'react';
+import { Menu, Phone } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger, SheetTitle } from '@/components/ui/sheet';
 import { Container } from './container';
@@ -12,17 +12,38 @@ import { trackEvent } from '@/lib/analytics';
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 180);
+    };
+    handleScroll();
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const handlePhoneClick = () => {
     trackEvent('phone_call', { location: 'header' });
   };
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-white">
+    <header
+      className={`sticky top-0 z-50 w-full border-b transition-all duration-300 ${
+        scrolled
+          ? 'bg-white border-gray-200 shadow-sm'
+          : 'bg-white/0 border-transparent'
+      }`}
+    >
       <Container>
         <div className="flex h-20 items-center justify-between">
-          {/* Logo */}
-          <Link href="/" className="flex items-center">
+          {/* Logo - fades in on scroll */}
+          <Link
+            href="/"
+            className={`flex items-center transition-all duration-300 ${
+              scrolled ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-2 pointer-events-none'
+            }`}
+          >
             <Image
               src="/logo-blue.webp"
               alt="The Inspection Academy"
@@ -39,7 +60,11 @@ export function Header() {
               <Link
                 key={item.href}
                 href={item.href}
-                className="text-sm font-medium text-gray-700 hover:text-primary transition-colors"
+                className={`text-sm font-medium transition-colors ${
+                  scrolled
+                    ? 'text-gray-700 hover:text-primary'
+                    : 'text-gray-700 hover:text-primary'
+                }`}
               >
                 {item.label}
               </Link>

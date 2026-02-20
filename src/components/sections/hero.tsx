@@ -1,3 +1,5 @@
+import Link from 'next/link';
+import Image from 'next/image';
 import { Award, GraduationCap, Zap, Shield } from 'lucide-react';
 import { Container, Section } from '@/components/layout';
 import { SITE_CONFIG } from '@/lib/constants';
@@ -25,9 +27,21 @@ const socialProofBadges = [
 
 export function Hero() {
   return (
-    <Section className="pt-8 md:pt-16 pb-16 md:pb-24" background="white">
+    <Section className="pt-2 md:pt-6 pb-16 md:pb-24" background="white">
       <Container>
         <div className="max-w-4xl mx-auto text-center">
+          {/* Large Hero Logo */}
+          <Link href="/" className="inline-block mb-4">
+            <Image
+              src="/logo-blue.webp"
+              alt="The Inspection Academy"
+              width={400}
+              height={200}
+              className="h-36 md:h-44 lg:h-52 w-auto mx-auto"
+              priority
+            />
+          </Link>
+
           {/* Headline */}
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-gray-900 mb-6">
             Pass Your Texas Home Inspector{' '}
