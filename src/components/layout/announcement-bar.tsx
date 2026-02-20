@@ -13,7 +13,7 @@ export function AnnouncementBar() {
         <span className="inline-flex items-center gap-2">
           <Gift className="h-4 w-4 flex-shrink-0" />
           <span>
-            Win <strong>$2,495</strong> in free home inspector training — Enter our Q1 2026 scholarship!
+            Win <strong>$2,495</strong> in free home inspector training — Enter our Q2 2026 scholarship!
           </span>
           <span className="hidden sm:inline underline">Apply now &rarr;</span>
         </span>
